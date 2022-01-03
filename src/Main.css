@@ -59,8 +59,14 @@
 }
 .rellenar-number{
     font-family: Arial, Helvetica, sans-serif;
-    
     padding: 10px;
     display: flex;
+}
+.precios{
+    margin-left: 250px;
+    display: flex;
+}
+.precio-separado{
 
+    margin-left: 30px;
 }
