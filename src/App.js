@@ -1,10 +1,11 @@
   import React, { useEffect, useState } from 'react'
-import { Container } from './Container'
+//import { Container } from './Container'
 import { FlavorForm, Main } from './Main'
-import { Navbar } from './Navbar'
-import { Rellenar } from './Rellenar'
+//import { Navbar } from './Navbar'
+//import { Rellenar } from './Rellenar'
 import { Table } from './chart/Table'
 import axios from 'axios'
+import { Cambio } from './router/Cambio'
   
   export default function App  ()  {
 
@@ -22,11 +23,10 @@ import axios from 'axios'
 
       return (
           <div>
-              <Navbar></Navbar>
+         
               <Main></Main> 
-              <FlavorForm></FlavorForm>
-              <Rellenar></Rellenar>
-              <Container> </Container>
+           
+              <Cambio></Cambio>
               <Table coins={coins}></Table>
           </div> 
       )
