@@ -71,12 +71,17 @@ body{
 .precios{
     margin-left: 250px;
     display: flex;
+    text-align: center;
 }
 .precio-separado{
-
+    display: flex;
+    flex-direction: row;
     margin-left: 30px;
 }
 
+.precio-separado2{
+    margin-left: 20px;
+}
 
 
 

@@ -1,20 +1,15 @@
 import React from 'react'
+import Coin from './Coin'
 
 export const Table = ({coins}) => {
     return (
-        <table>
-            <thead>
-                <tr>
-                    <td>
-
-                    </td>
-                </tr>
-            </thead>
-            <tbody className='precios'>
+        <div>
+           
+            <div className='precios'>
                 {coins.map(coin => (
-                    <h1 className='precio-separado'>{coin.name} {coin.current_price}$ </h1>
+                    <Coin coin={coin}></Coin>
                 ))}
-            </tbody>
-        </table>
+            </div>
+        </div>
     )
 }
