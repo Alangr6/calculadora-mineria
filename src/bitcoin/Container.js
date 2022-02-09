@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Container = () => {
     return (
-        <div className="input-style"> 
+        <form className="input-style"> 
         <label className='label'>Hashrate del minero 
         <input type="number" className='input-number' placeholder='0' />TH/S
         </label>
@@ -15,10 +15,11 @@ export const Container = () => {
         <label className='label'>Comision
         <input type="number" className='input-number' placeholder='0' />%   
         </label>
+    
         
 
         
-    </div>
+    </form>
     )
 }
 

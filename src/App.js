@@ -1,11 +1,13 @@
   import React, { useEffect, useState } from 'react'
 //import { Container } from './Container'
-import {  Main } from './Main'
+import {  Header } from './Header'
 //import { Navbar } from './Navbar'
 //import { Rellenar } from './Rellenar'
 import { Table } from './chart/Table'
 //import axios from 'axios'
 import { Cambio } from './router/Cambio'
+import { Converter } from './converter/Converter'
+import { Converter2 } from './converter/Converter2'
   
   export default function App  ()  {
 
@@ -20,6 +22,7 @@ import { Cambio } from './router/Cambio'
 
     const res = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false'
 
+    console.log(coins);
     useEffect(() => {
       fetch(res)
       .then(response => response.json())
@@ -29,9 +32,11 @@ import { Cambio } from './router/Cambio'
       return (
           <div>
          
-              <Main></Main> 
+              <Header></Header> 
               <Cambio></Cambio>
               <Table coins={coins}></Table>
+             {/*  <Converter coins={coins}></Converter> */}
+            {/*  <Converter2 coins={coins}></Converter2> */}
           </div> 
       )
   }

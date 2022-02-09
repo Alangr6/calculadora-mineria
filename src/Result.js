@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Rellenar = () => {
+export const Result = () => {
     return (
        
             <div className="rellenar-style"> 

@@ -1,13 +1,13 @@
 import React from 'react'
-import Coin from './Coin'
+import CoinPrice from './CoinPrice'
 
 export const Table = ({coins}) => {
     return (
         <div>
-           
+            <h1 className='titulo-precio'>Precio en directo</h1>
             <div className='precios'>
                 {coins.map(coin => (
-                    <Coin coin={coin}></Coin>
+                    <CoinPrice coin={coin}/>
                 ))}
             </div>
         </div>

@@ -69,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # calculadora-mineria
+
+{coins.map(coin => (
+                    <h1 className='precio-separado'>{coin.name} {coin.current_price}$ </h1>
+                ))}

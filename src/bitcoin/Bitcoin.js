@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container } from './Container'
-import { Rellenar } from '../Rellenar'
+import { Result } from '../Result'
+import { Converter } from '../converter/Converter'
+
+
 
 export const Bitcoin = () => {
+    
+  
+
+
     return (
         <div>
-           <Rellenar></Rellenar> 
+           <Result></Result> 
            <Container></Container>
+           <Converter coins={coins}></Converter>
+           
         </div>
     )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container2 } from './Container2'
-import { Rellenar } from '../Rellenar'
+import { Result } from '../Result'
 
 export const Ethereum = () => {
     return (
         <div>
-            <Rellenar></Rellenar>
+            <Result></Result>
             <Container2></Container2>
         </div>
     )
