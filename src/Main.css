@@ -88,7 +88,7 @@ body{
 
    
   
-  .btc {
+  .btc-button {
     transition-duration: 0.4s;
     background-color: white; /* Green */
     border: 2px, #4CAF50;
@@ -101,7 +101,7 @@ body{
     border-radius: 5px;
   }
   
-  .btc:hover {
+  .btc-button:hover {
     background-color: #4CAF50; /* Green */
     border :2px, #4CAF50;
     color: white;
@@ -113,7 +113,7 @@ body{
     border-radius: 5px;
 
   }
-  .ethereum {
+  .ethereum-button {
     transition-duration: 0.4s;
     background-color: white; /* Green */
     border: 2px, #4CAF50;
@@ -126,7 +126,7 @@ body{
     border-radius: 5px;
   }
   
-  .ethereum:hover {
+  .ethereum-button:hover {
     background-color: #4CAF50; /* Green */
     border :2px, #4CAF50;
     color: white;
@@ -139,7 +139,7 @@ body{
 
   }
 
-  .btc-eth {
+  .btc-eth-button {
       display: flex;
       flex-direction: row;
       background-color: black;
@@ -148,4 +148,34 @@ body{
   .titulo-precio {
       display: flex;
       justify-content: center;
+  }
+
+  .navbar{
+      background-color: black;
+      display: flex;
+      justify-content: end;
+  }
+  .table-button {
+    transition-duration: 0.4s;
+    background-color: black; /* Green */
+    border: 2px, black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+  }
+
+  .table-button:hover{
+    background-color: white; /* Green */
+    border :2px, black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
   }

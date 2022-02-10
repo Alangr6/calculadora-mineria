@@ -1,8 +1,8 @@
 import React from 'react'
 
 const CoinPrice = ({coin}) => {
+  
     console.log(coin);
-    
     return (
       
       <div className='precio-separado'>

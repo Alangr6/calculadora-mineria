@@ -3,15 +3,18 @@ import { Link, NavLink } from 'react-router-dom'
 
 export const Navbar2 = () => {
     return (
-        <nav className="btc-eth">
+        <nav className="btc-eth-button">
 
-            <Link to="/" >
-                <button className='btc'>Bitcoin</button>
+            <Link to="/bitcoin" >
+                <button className='btc-button'>Bitcoin</button>
             </Link>
 
             <NavLink exact to="/ethereum" >
-                <button className='ethereum'>Ethereum</button>
+                <button className='ethereum-button'>Ethereum</button>
             </NavLink>
+
+          
         </nav>
+        
     )
 }
