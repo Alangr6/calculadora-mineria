@@ -13,24 +13,35 @@ export const Top100 = () => {
             .then(response => response.json())
             .then(data => setCoins(data))
     }, [])
+    const titles = ['Coin', 'Price', 'Price Change']
 
     return (
+        <table className='table'>
+            <thead className='table-head'>
+                <tr >
+                  <th className='table-coin'>Coin</th>
+                  <th className='table-price'>Price</th>
 
 
-        
-        <table>
-            <thead>
-               <th>name</th>
+                </tr>
             </thead>
-            <tbody>
+            <tbody  >
                 {coins.map(coin => (
-                    <tr>
-                        {coin.name}
-                        
+                    <tr key={coin.name}>
+                        <td className='table-body'>
+                            <img src={coin.image} style={{width: '3%'}}></img>
+
+                            <span>
+                                {coin.name}
+                            </span>
+
+                        </td>
+                        <td>{coin.current_price}$</td>
+
                     </tr>
-                    
+
                 ))}
-                
+
             </tbody>
         </table>
     )

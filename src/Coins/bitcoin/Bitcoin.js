@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from 'react'
 import { Container } from './Container'
-import { Result } from '../Result'
-import { ConverterBtc } from '../converter/ConverterBtc'
+import { Result } from '../../Result'
+import { ConverterBtc } from '../../converter/ConverterBtc'
 
-import { Navbar2 } from '../router/Navbar2'
-import CoinPrice from '../chart/CoinPrice'
+import { Navbar2 } from '../../router/Navbar2'
+import CoinPrice from '../../chart/CoinPrice'
 
 
 

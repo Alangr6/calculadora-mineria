@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Container2 } from './Container2'
-import { Result } from '../Result'
+import { Result } from '../../Result'
 
-import { Navbar2 } from '../router/Navbar2'
-import { ConverterEth } from '../converter/ConverterEth'
+import { Navbar2 } from '../../router/Navbar2'
+import { ConverterEth } from '../../converter/ConverterEth'
 
-import CoinPrice from '../chart/CoinPrice'
+import CoinPrice from '../../chart/CoinPrice'
 
 export const Ethereum = () => {
   
