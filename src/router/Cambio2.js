@@ -1,4 +1,4 @@
-import {Routes, Route, BrowserRouter} from "react-router-dom"
+/* import {Routes, Route, BrowserRouter} from "react-router-dom"
 
 import React from 'react'
 import { Bitcoin } from "../bitcoin/Bitcoin"
@@ -19,4 +19,4 @@ export const Cambio2 = () => {
             </Routes>
         </BrowserRouter>
     )
-}
+} */

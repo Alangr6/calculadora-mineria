@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-export const Converter2 = ({ coins }) => {
+export const ConverterEth = ({ coins }) => {
     const [dollarValue, setDollars] = useState(0)
     return (
         <div className="input-style">

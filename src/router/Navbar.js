@@ -15,7 +15,7 @@ export const Navbar = () => {
                 
                 <button className='table-button'>calculadora</button>
             </NavLink>
-            <NavLink exact to="/home" >
+            <NavLink  to="/" >
                 <button className='table-button'>home</button>
             </NavLink>
 

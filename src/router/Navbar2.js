@@ -9,7 +9,7 @@ export const Navbar2 = () => {
                 <button className='btc-button'>Bitcoin</button>
             </Link>
 
-            <NavLink exact to="/ethereum" >
+            <NavLink  to="/ethereum" >
                 <button className='ethereum-button'>Ethereum</button>
             </NavLink>
 

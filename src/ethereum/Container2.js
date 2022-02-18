@@ -13,7 +13,7 @@ export const Container2 = () => {
         <input type="number" className='input-number' placeholder='0' />$/kWh
         </label>
         <label className='label'>Comision
-        <input type="number" className='input-number' placeholder='0' />%   
+        <input type="number" className='input-number' placeholder='0' value={1} />%   
         </label>
         
 

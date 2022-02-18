@@ -74,14 +74,14 @@ body{
     text-align: center;
     justify-content: center;
 }
-.precio-separado{
+.precio-junto{
     display: flex;
     flex-direction: row;
-    margin-left: 20px;
+    justify-content: center;
 }
 
 .precio-separado2{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 
@@ -91,8 +91,8 @@ body{
   .btc-button {
     transition-duration: 0.4s;
     background-color: white; /* Green */
-    border: 2px, #4CAF50;
-    color: #4CAF50;
+    border: 2px, goldenrod;
+    color: goldenrod;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -102,8 +102,8 @@ body{
   }
   
   .btc-button:hover {
-    background-color: #4CAF50; /* Green */
-    border :2px, #4CAF50;
+    background-color: goldenrod; /* Green */
+    border :2px, goldenrod;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -116,8 +116,8 @@ body{
   .ethereum-button {
     transition-duration: 0.4s;
     background-color: white; /* Green */
-    border: 2px, #4CAF50;
-    color: #4CAF50;
+    border: 2px, gray;
+    color: gray;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -127,8 +127,8 @@ body{
   }
   
   .ethereum-button:hover {
-    background-color: #4CAF50; /* Green */
-    border :2px, #4CAF50;
+    background-color: gray; /* Green */
+    border :2px, gray;
     color: white;
     padding: 15px 32px;
     text-align: center;

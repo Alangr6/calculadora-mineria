@@ -19,9 +19,9 @@ export const Cambio = () => {
              
                 <Route path="/table" element={<Top100/>}/>
                 <Route path="/bitcoin" element={<Bitcoin/>}/>
-                <Route path="/bitcoin" element={<Bitcoin/>}/>
+                
                 <Route path="/ethereum" element={<Ethereum/>}/>
-                <Route path="/home" element={<Home/>}/>
+                <Route path="/" element={<Home/>}/>
 
             </Routes>
         </BrowserRouter>
