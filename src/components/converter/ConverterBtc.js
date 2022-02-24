@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export const ConverterBtc = ({ coins }) => {
     const [dollarValue, setDollars] = useState(0)
+    
     return (
         <div className="input-style">
             <form>
@@ -14,9 +15,9 @@ export const ConverterBtc = ({ coins }) => {
                 <label className='label'>Valor en $
                     <input type="number" className='input-number' placeholder='0' value={dollarValue}  />
                 </label>
-
+               
             </form>
         </div>
-
+         
     )
 }

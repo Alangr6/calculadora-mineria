@@ -182,17 +182,3 @@ body{
   }
  
 
-  .table-head{
-
-   
-   
-      
-  }
-  .table-coin{
-    display: flex;
-  }
-  .table-price{
-      
-      align-items: flex-start;
-      justify-content: start;
-  }

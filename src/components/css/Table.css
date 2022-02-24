@@ -1,0 +1,32 @@
+
+
+
+th{
+
+  text-align: start;
+}
+.table-body{
+  border: 2px solid rgb(29, 148, 38);
+ 
+}
+.table-head{
+  border: 1px solid rgb(44, 71, 148);
+}
+.index {
+  width: 10px;
+}
+.table-coin{
+  width: 20%;
+
+}
+.table-price{
+   
+    padding-right: 10rem;
+}
+
+
+.table-price-change{
+  
+  
+  padding-right: 10rem;
+}

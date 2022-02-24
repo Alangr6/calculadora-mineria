@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container2 } from './Container2'
-import { Result } from '../../Result'
+import { Result } from '../bitcoin/Result'
 
 import { Navbar2 } from '../../router/Navbar2'
 import { ConverterEth } from '../../converter/ConverterEth'

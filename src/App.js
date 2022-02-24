@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Header } from './Header'
+import { Header } from './components/Main/Header'
 
-import { Cambio } from './router/Cambio'
+import { Cambio } from '../src/components/router/Cambio'
 
 export default function App() {
 
