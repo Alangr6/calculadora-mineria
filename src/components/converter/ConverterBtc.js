@@ -6,18 +6,18 @@ export const ConverterBtc = ({ coins }) => {
     const [dollarValue, setDollars] = useState(0)
     
     return (
-        <div className="input-style">
-            <form>
+      
+            <form className="input-style">
 
-                <label className='label'>Cantidad de Bitcoin
+                <label className='label'>Cantidad de Bitcoin 
                     <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollars(e.target.value * coins[0].current_price)} />
                 </label>
                 <label className='label'>Valor en $
-                    <input type="number" className='input-number' placeholder='0' value={dollarValue}  />
+                    <input type="number" className='input-number' placeholder='0' value={dollarValue}  /> 
                 </label>
                
             </form>
-        </div>
+       
          
     )
 }

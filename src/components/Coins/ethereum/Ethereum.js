@@ -5,7 +5,7 @@ import { Result } from '../bitcoin/Result'
 import { Navbar2 } from '../../router/Navbar2'
 import { ConverterEth } from '../../converter/ConverterEth'
 
-import CoinPrice from '../../chart/CoinPrice'
+import EthPrice from '../../chart/EthPrice'
 
 export const Ethereum = () => {
   
@@ -27,7 +27,7 @@ export const Ethereum = () => {
             <Result></Result>
             <Container2></Container2>
             <ConverterEth coins={coins}></ConverterEth>
-            <CoinPrice coins={coins}></CoinPrice>
+            <EthPrice coins={coins}></EthPrice>
         </div>
     )
 }

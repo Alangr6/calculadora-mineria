@@ -2,16 +2,15 @@ import React from 'react'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <body>
+      <section>
+          <img className='image-1' src="https://images6.alphacoders.com/912/thumb-1920-912465.jpg" >
+
+          </img>
+    
+        
+
+      </section>
+    </body>
   )
 }
-/* return (
-  <div>
-      <h1 className='titulo-precio'>Precio en directo</h1>
-      <div className='precios'>
-          {coins.map(coin => (
-              <CoinPrice coin={coin}/>
-          ))}
-      </div>
-  </div>
-) */

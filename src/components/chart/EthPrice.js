@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react'
 
 
-const CoinPrice = () => {
+const EthPrice = () => {
   
   const [coins,setCoins] = useState([])
 
@@ -21,11 +21,7 @@ const CoinPrice = () => {
     
     <div className='precio-junto'>
 
-      <h2>
-        Bitcoin: 
-        {coins.current_price}$
-
-      </h2>
+      
 
       <h2 className='precio-separado2'>
         Ethereum:
@@ -35,4 +31,4 @@ const CoinPrice = () => {
   )
 }
 
-export default CoinPrice
+export default EthPrice

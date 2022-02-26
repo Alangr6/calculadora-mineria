@@ -25,6 +25,7 @@ export const Top100 = () => {
                     <th className='table-coin'>Moneda</th>
                     <th className='table-price'>Precio</th>
                     <th className='table-price-change'>Cambio 24h</th>
+                    <th>Capitalizaciòn de mercado</th>
                     <th>Volumen Ùltimas 24h</th>
 
 
@@ -35,7 +36,7 @@ export const Top100 = () => {
                     <tr key={coin.name}>
                         <td className='index'>{coin.market_cap_rank}</td>
                         <td >
-                            <img src={coin.image} style={{ width: '4%' }}></img>
+                            <img className='img' src={coin.image} ></img>
 
                             <span className='table-coin' >
                                 {coin.name}
@@ -44,6 +45,7 @@ export const Top100 = () => {
                         </td>
                         <td  className='table-price'>{coin.current_price}$</td>
                         <td  className='table-price-change'>{coin.price_change_percentage_24h}%</td>
+                        <td className='table-market-cap'>{coin.market_cap}$</td>
                         <td>{coin.total_volume}$</td>
                     </tr>
 

@@ -78,6 +78,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: white;
+    padding: 65px 0;
    
 }
 
@@ -152,7 +154,7 @@ body{
   }
 
   .navbar{
-      background-color: black;
+      background-color: rgb(124, 50, 50);
       display: flex;
       justify-content: end;
   }
@@ -166,6 +168,7 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border: 0;
   
   }
 
@@ -178,7 +181,61 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    
   
   }
  
 
+.footer{
+    height: 10rem;
+    background-color: rgb(70, 69, 69);
+    
+
+}
+.footer-contenido{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: aliceblue;
+}
+.footer-titulo{
+    margin: 0;
+   
+}
+.footer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 2rem;
+}
+.footer-parrafo{
+    width: 400px;
+}
+.footer-input{
+    padding-top: 16px;
+    padding-bottom: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 26px;
+    width: 379px;
+    border: 1px solid white;
+
+}
+.footer-boton{
+    background-color: blue;
+    color: aliceblue;
+    padding-top: 21px;
+    padding-bottom: 17.5px;
+    padding-right: 22px;
+    padding-left: 22px;
+    cursor: pointer;
+    border: 1px solid blue;
+    text-align: center;
+
+    
+    
+
+}
+body{
+    background-color: rgb(70, 69, 69);
+}
