@@ -6,7 +6,7 @@ export const ConverterEth = ({ coins }) => {
     const [dollarValue, setDollars] = useState(0)
     return (
         
-            <form className="input-style">
+            <form className="input-style2">
 
                 <label className='label'>Cantidad de Ethereum
                     <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollars(e.target.value * coins[1].current_price)} />

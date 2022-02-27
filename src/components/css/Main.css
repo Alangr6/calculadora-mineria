@@ -6,7 +6,8 @@ body{
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: tomato;
+    background-color: black;
+    color: aliceblue;
     margin: 0px;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +26,7 @@ body{
     
     padding: 10px;
     display: flex;
-    
+    border-radius: 5px;
 }
 .label{
     margin-top: 20px;
@@ -34,29 +35,48 @@ body{
 }
 
 .input-style {
-    background-color: rgb(105, 94, 105);
+    background-color: whitesmoke;
    
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
-    color: lightgray;
+    color: black;
     display: flex;
     justify-content: center;
-    
+    font-style: oblique;
+    font-weight: 600;
     row-gap: 20px;
     column-gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;    
-    
+    padding-top: 2rem;
+    border: 0;
 
 }
-.rellenar-style {
-    background-color: rgb(158, 52, 158);
-    padding-bottom: 3rem;
+.input-style2{
+    background-color: whitesmoke;
+    border: 0;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
-    color: lightgray;
+    color: black;
     display: flex;
+    justify-content: center;
+    font-style: oblique;
+    font-weight: 600;
+    row-gap: 20px;
+    column-gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;   
+    padding-bottom: 2rem;
+}
+.rellenar-style {
+    background-color: whitesmoke;
     
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: flex;
+    font-style: oblique;
+    font-weight: 600;
     justify-content: center;
     row-gap: 20px;
     column-gap: 20px;
@@ -64,9 +84,12 @@ body{
     flex-wrap: wrap;    
 }
 .rellenar-number{
-    font-family: Arial, Helvetica, sans-serif;
+   
     padding: 10px;
     display: flex;
+    border: 1px transparent black;
+    border-radius: 5px;
+    
 }
 .precios{
 
@@ -78,8 +101,9 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: white;
-    padding: 65px 0;
+    background-color: whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
    
 }
 
@@ -114,7 +138,7 @@ body{
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-
+    cursor: pointer;
   }
   .ethereum-button {
     transition-duration: 0.4s;
@@ -139,24 +163,27 @@ body{
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 
   }
 
-  .btc-eth-button {
-      display: flex;
-      flex-direction: row;
-      background-color: black;
-  }
+  
 
   .titulo-precio {
       display: flex;
       justify-content: center;
   }
-
+.btc-eth-button {
+      display: flex;
+      flex-direction: row;
+          background-color: whitesmoke;
+     
+  }
   .navbar{
-      background-color: rgb(124, 50, 50);
+      background-color: black;
       display: flex;
       justify-content: end;
+      
   }
   .table-button {
     transition-duration: 0.4s;
@@ -181,6 +208,7 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
     
   
   }
@@ -188,7 +216,9 @@ body{
 
 .footer{
     height: 10rem;
-    background-color: rgb(70, 69, 69);
+    background-color: black;
+    display: flex;
+    justify-content: center;
     
 
 }
@@ -205,8 +235,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
+    
+    
+
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .footer-parrafo{
     width: 400px;
@@ -222,20 +255,34 @@ body{
 
 }
 .footer-boton{
-    background-color: blue;
+    background-color: black;
     color: aliceblue;
     padding-top: 21px;
     padding-bottom: 17.5px;
     padding-right: 22px;
     padding-left: 22px;
     cursor: pointer;
-    border: 1px solid blue;
+    border: 1px solid black;
     text-align: center;
-
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
     
     
 
 }
-body{
-    background-color: rgb(70, 69, 69);
+.footer-boton:hover{
+    background-color: white;
+    color: black;
+    padding-top: 21px;
+    padding-bottom: 17.5px;
+    padding-right: 22px;
+    padding-left: 22px;
+    cursor: pointer;
+    border: 1px solid white;
+    text-align: center;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+    
+
 }
