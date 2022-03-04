@@ -7,6 +7,7 @@ export const Result = () => {
             <label className='label'>Dinero que quieres invertir
                 <input type="number" className='rellenar-number' placeholder='0' />$
             </label>
+            
           
         </form>
     )

@@ -24,7 +24,7 @@ export const Top100 = () => {
                     <th className='index'>#</th>
                     <th className='table-coin'>Moneda</th>
                     <th className='table-price'>Precio</th>
-                    <th className='table-price-change'>Cambio 24h</th>
+                    <th className='table-price-change'>24h %</th>
                     <th>Capitalizaciòn de mercado</th>
                     <th>Volumen Ùltimas 24h</th>
 

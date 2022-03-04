@@ -9,10 +9,10 @@ export const ConverterBtc = ({ coins }) => {
       
             <form className="input-style2">
 
-                <label className='label'>Cantidad de Bitcoin 
+                <label className='label-2'>Cantidad de Bitcoin minado 24h 
                     <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollars(e.target.value * coins[0].current_price)} />
                 </label>
-                <label className='label'>Valor en $
+                <label className='label-2'>Valor en $
                     <input type="number" className='input-number' placeholder='0' value={dollarValue}  /> 
                 </label>
                

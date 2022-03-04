@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container2 } from './Container2'
 import { Result } from '../bitcoin/Result'
 
-import { Navbar2 } from '../../router/Navbar2'
+import { Navbar2 } from '../../../router/Navbar2'
 import { ConverterEth } from '../../converter/ConverterEth'
 
 import EthPrice from '../../chart/EthPrice'
@@ -24,7 +24,7 @@ export const Ethereum = () => {
     return (
         <div>
             <Navbar2></Navbar2>
-            <Result></Result>
+            
             <Container2></Container2>
             <ConverterEth coins={coins}></ConverterEth>
             <EthPrice coins={coins}></EthPrice>

@@ -3,7 +3,7 @@ import { Container } from './Container'
 import { Result } from './Result'
 import { ConverterBtc } from '../../converter/ConverterBtc'
 
-import { Navbar2 } from '../../router/Navbar2'
+import { Navbar2 } from '../../../router/Navbar2'
 import BtcPrice from '../../chart/BtcPrice'
 
 
@@ -25,7 +25,7 @@ export const Bitcoin = () => {
     return (
         <div>
             <Navbar2></Navbar2>
-           <Result></Result> 
+          
            <Container></Container>
            <ConverterBtc coins={coins}></ConverterBtc>
            <BtcPrice coins={coins}></BtcPrice>

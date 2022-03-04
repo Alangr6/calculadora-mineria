@@ -33,7 +33,30 @@ body{
     margin-bottom: 20px;
     margin-right: 20px;
 }
-
+.label-1{
+    background-color: whitesmoke;
+   
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: oblique;
+    font-weight: 600;
+    width: 200px;
+    padding-top: 2rem;
+    border: 0;
+}
+.label-2{
+    width: 195px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 .input-style {
     background-color: whitesmoke;
    
@@ -68,6 +91,7 @@ body{
     flex-wrap: wrap;   
     padding-bottom: 2rem;
 }
+
 .rellenar-style {
     background-color: whitesmoke;
     
@@ -77,11 +101,32 @@ body{
     display: flex;
     font-style: oblique;
     font-weight: 600;
-    justify-content: center;
+    flex-direction: row;
     row-gap: 20px;
     column-gap: 20px;
     flex-direction: row;
-    flex-wrap: wrap;    
+    position: relative;
+    margin-left: 50rem;
+    
+    width: 100%;
+}
+.boton-calculadora{
+    width: 5rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(11, 138, 241);
+    position: relative;
+    top: 70px;
+}
+.boton-calculadora:hover{
+
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(11, 138, 241);
+    cursor: pointer;
+    
 }
 .rellenar-number{
    
