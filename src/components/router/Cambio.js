@@ -5,8 +5,8 @@ import React from 'react'
 import { Top100 } from "../Top100/Top100"
 import { Navbar } from "./Navbar"
 import { Navbar2 } from "./Navbar2"
-import { Bitcoin } from "../calculadora/Coins/bitcoin/Bitcoin"
-import { Ethereum } from "../calculadora/Coins/ethereum/Ethereum"
+import { Bitcoin } from "../calculadora/bitcoin/Bitcoin"
+import { Ethereum } from "../calculadora/ethereum/Ethereum"
 
 import { Home } from "../home/Home"
 

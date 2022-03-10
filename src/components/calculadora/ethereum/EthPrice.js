@@ -12,7 +12,7 @@ const EthPrice = () => {
   useEffect(() => {
     fetch(res)
     .then(response => response.json())
-    .then(data => setCoins(data))
+    .then(data => setCoins(data.slice(1,2)))
     
        },[])
   
@@ -21,13 +21,17 @@ const EthPrice = () => {
     
     <div className='precio-junto'>
 
-      
+    {coins.map(coin => (
+      <div key={coin}>
 
-      <h2 className='precio-separado2'>
-        Ethereum:
-        {coins.current_price}$
-      </h2>
-    </div>
+        <h2 className='table-price'>Ethereum: {coin.current_price}$</h2>
+
+
+      </div>
+
+    ))}
+
+  </div>
   )
 }
 
