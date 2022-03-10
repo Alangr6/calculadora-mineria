@@ -29,3 +29,10 @@
 
 
          https://images6.alphacoders.com/912/thumb-1920-912465.jpg
+         /////////////////////////////////////////////////////////////////////
+
+"nombre":"Whatsminer M30S",
+"precio":11979,
+"hashrate":90,
+"energia":3.6,
+"cantidadMinado24h":0.00041072

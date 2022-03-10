@@ -26,7 +26,6 @@ const EthPrice = () => {
 
         <h2 className='table-price'>Ethereum: {coin.current_price}$</h2>
 
-
       </div>
 
     ))}
