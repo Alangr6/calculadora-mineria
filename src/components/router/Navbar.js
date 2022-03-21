@@ -18,6 +18,9 @@ export const Navbar = () => {
             <NavLink exact to="/table" >
                 <button className='table-button'>Table</button>
             </NavLink>
+            <NavLink exact to="/monedas" >
+                <button className='table-button'>Crear</button>
+            </NavLink>
 
 
         </nav>

@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:8080/equipoMineria"
+export const API_URL = "http://localhost:8000"
