@@ -4,20 +4,26 @@ import { Navbar4 } from "../router/Navbar4";
 
 
 export const AddCoin = () => {
-    document.addEventListener("DOMContentLoaded", function(e) {
 
-        let miForm = document.getElementById('miForm');
-        miForm.onsubmit = function(e) {
-         
-          let formData = new FormData(this);
-          let jsonData = {};
-          for (let [k, v] of formData) {
-            jsonData[k] = v;
-          }
-          console.log(jsonData);
-        }
-      
-      });
+
+    function handleSubmit(e) {
+        const API_URL = "http://localhost:8000/api/crypto/create";
+      /*   const select = document.getElementById('algorithm');
+        const algorithm = select.options[select.selectedIndex]; */
+        fetch(API_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                name : window.document.getElementById('name').value ,
+                price : window.document.getElementById('price').value,
+                creation_date :window.document.getElementById('creation_date').value,
+                algorithm : window.document.getElementById('algorithm').value
+
+            })
+        });
+    
+        e.preventDefault();
+    }
+
     const API_URL = "http://localhost:8000/api/crypto/create";
     return (
         
@@ -25,29 +31,25 @@ export const AddCoin = () => {
                <Navbar3></Navbar3>
                <Navbar4></Navbar4>
                <h1 className='crear-titulo'>Add Moneda</h1>
-                <form action={API_URL} method="POST" className="crear-formulario" id="miForm"  >
+                <form action={API_URL} method="POST" className="crear-formulario" >
                     <label className='crear-label'>Nombre
-                        <input name='name' type="text" className='crear-input' />
+                        <input name='name' type="text" className='crear-input' id="name" />
                     </label>
                   
                     <label className='crear-label'>Precio
-                        <input name='price' type="number" className='crear-input'  />
+                        <input name='price' type="number" className='crear-input' id="price" />
                     </label>
                     <label className='crear-label'>Fecha de creacion
-                        <input name='creation_date' type="date" className='crear-input' />
+                        <input name='creation_date' type="date" className='crear-input' id="creation_date" />
                     </label>
                     <label className="crear-label">Algoritmo
-                    <input name='algorithm' type="text" className='crear-input' />
-    
-                       {/*  <select  className='crear-select'>
-    
-                            <option value="1">SHA-256</option>
-                            <option value="2"> Ethash</option>
-    
-                        </select> */}
+                        <select id="algorithm" className='crear-select'>
+                            <option value="SHA-256">SHA-256</option>
+                            <option value="Ethash"> Ethash</option>
+                        </select>
                     </label>
                   
-                    <button className='crear-boton2' >
+                    <button onClick={handleSubmit} className='crear-boton2' >
                         Crear
                     </button>
     

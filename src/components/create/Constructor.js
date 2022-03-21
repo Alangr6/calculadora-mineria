@@ -60,6 +60,7 @@ export default class Constructor extends Component {
                 name : this.state.name,
                 price : this.state.price,
                 date : this.state.date,
+                algorithm : this.state.algorithm
             })
         });
     

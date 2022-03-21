@@ -17,6 +17,8 @@ import { UpdateMiner } from "../create/UpdateMiner"
 import { DeleteMiner } from "../create/DeleteMiner"
 
 export const Cambio = () => {
+    
+
     return (
         <BrowserRouter>
         <Navbar></Navbar>

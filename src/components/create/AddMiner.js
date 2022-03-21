@@ -27,14 +27,6 @@ export const AddMiner = () => {
 
                     </select>
                 </label>
-                <label className="crear-label">Algoritmo
-                    <select className='crear-select'>
-
-                        <option value="1">SHA-256</option>
-                        <option value="2"> Ethash</option>
-
-                    </select>
-                </label>
                 <label className='crear-label'>Hashrate
                     <input type="" className='crear-input' />
                 </label>

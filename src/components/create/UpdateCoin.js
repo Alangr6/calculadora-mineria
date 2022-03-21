@@ -3,6 +3,10 @@ import { Navbar3 } from '../router/Navbar3'
 import { Navbar4 } from '../router/Navbar4'
 
 export const UpdateCoin = () => {
+
+    
+
+
     return (
         <div>
             <Navbar3></Navbar3>
