@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar4 } from '../router/Navbar4'
-import Constructor from './Constructor'
 
 export const DeleteCoin = () => {
   const API_URL = 'http://localhost:8000/api/crypto/read'
   
 
-  /* const [crypto, setCrypto] = useState([])
+  const [crypto, setCrypto] = useState([])
   console.log(crypto);
   useEffect(() => {
     fetch(API_URL)
@@ -35,14 +34,32 @@ export const DeleteCoin = () => {
           alert('no se ha podido borrar')
         }
       })
-  } */
+  }
 
   return (
     <div>
       <Navbar3></Navbar3>
       <Navbar4></Navbar4>
       <h1 className='crear-titulo'>Borrar Moneda</h1>
-      <Constructor></Constructor>
+      <ul>
+        {
+          crypto.map((crypt, id) => {
+            
+            const { name, price, creation_date, algorithm } = crypt;
+            return <li key={name} >
+              <form className="crear-formulario">
+                <label className='crear-label'>Id
+                  <input type="" className='crear-input' />
+                </label>
+
+                <button className='crear-boton3'>
+                  Borrar
+                </button>
+              </form>
+            </li>
+          })}
+      </ul>
+
 
     </div>
   )

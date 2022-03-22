@@ -4,108 +4,100 @@ import { Navbar4 } from "../router/Navbar4";
 
 
 export default class Constructor extends Component {
-    
+
     constructor(props) {
         super(props);
-    
+
         this.state = {
-            name : '',
-            price: '',
-            date: '',
-            algorithm:''
+            data: false,
+            crypto: [],
+
         };
-    
-        this.handleChangeName= this.handleChangeName.bind(this);
-        this.handleChangePrice= this.handleChangePrice.bind(this);
-        this.handleChangeDate= this.handleChangeDate.bind(this);
-        this.handleChangeAlgorithm= this.handleChangeDate.bind(this);
-    
-        this.handleSubmit = this.handleSubmit.bind(this);
-    
     }
+    borrarDatos = (id) => {
+        console.log(id);
+        const API_URL = 'http://localhost:8000/api/crypto/delete/' + id;
+        //const API_URL = 'https://jsonplaceholder.typicode.com/users/'+id;
+        fetch(API_URL)
+            .then(response => response.json())
+            .then((dataResponse) => {
 
-
-    handleChangeName(e) {
-        this.setState({
-            name: e.target.value,
-        })
-    }
-    
-    handleChangePrice(e) {
-        this.setState({
-            price: e.target.value,
-        })
-    }
-    
-    handleChangeDate(e) {
-        this.setState({
-            date: e.target.value,
-        })
-    }
-    handleChangeAlgorithm(e) {
-        this.setState({
-            algorithm: e.target.value,
-        })
-    }
-    
-    handleSubmit(e) {
-        const API_URL = "http://localhost:8000/api/crypto/create";
-        fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name : this.state.name,
-                price : this.state.price,
-                date : this.state.date,
-                algorithm : this.state.algorithm
+                console.log(dataResponse)
+                this.cargarDatos()
             })
-        });
-    
-        e.preventDefault();
-    }
-  
-render() {
 
-   
-    const API_URL = "http://localhost:8000/api/crypto/create";
-    return (
-        
-        <div>
-               <Navbar3></Navbar3>
-               <Navbar4></Navbar4>
-               <h1 className='crear-titulo'>Add Moneda</h1>
-                <form action={API_URL} method="POST" className="crear-formulario"   >
-                    <label className='crear-label'>Nombre
-                        <input name='name' type="text" className='crear-input' />
-                    </label>
-                  
-                    <label className='crear-label'>Precio
-                        <input name='price' type="number" className='crear-input'  />
-                    </label>
-                    <label className='crear-label'>Fecha de creacion
-                        <input name='creation_date' type="date" className='crear-input' />
-                    </label>
-                    <label className="crear-label">Algoritmo
-                    <input name='algorithm' type="text" className='crear-input' />
-    
-                       {/*  <select  className='crear-select'>
-    
-                            <option value="1">SHA-256</option>
-                            <option value="2"> Ethash</option>
-    
-                        </select> */}
-                    </label>
-                  
-                    <button className='crear-boton2' onClick={this.handleSubmit}>
-                        Crear
-                    </button>
-    
-                </form>
-            
-        </div>
-      )
-}
+            .catch(console.log()
+
+            )
+    };
+
+    cargarDatos() {
+        const API_URL = 'http://localhost:8000/api/crypto/read';
+        //const API_URL = 'https://jsonplaceholder.typicode.com/users';
+        fetch(API_URL)
+
+            .then(response => response.json())
+            .then((dataResponse) => {
+                JSON.stringify(dataResponse)
+                console.log(JSON.stringify(dataResponse))
+                this.setState({ data: true, crypto: dataResponse })
+            })
+
+            .catch(console.log()
+
+            )
+    };
+    componentDidMount() {
+        this.cargarDatos()
+    }
+
+    render() {
+
+        const { data, crypto } = this.state
+        console.log(crypto);
+        if (!data) {
+            return <div>Cargando</div>
+        } else {
+            return (
+                <div className="crear-formulario">
+                    <table className='table'>
+                        <thead className='table-head'>
+                            <tr >
+                                <th className='index'>#</th>
+                                <th className='table-coin'>Moneda</th>
+                                <th className='table-price'>Precio</th>
+                                <th className='table-price-change'>24h %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                {crypto.map((crypt) => (
+                                    //console.log(crypt);
+                                    //const { name, price, creation_date, algorithm } = crypt;
+                                   
+                                    < tr key={crypt.id} className="crear-formulario2">
+                                        <td className='crear-label2'>{crypt.id}</td>
+                                        <td className='crear-label2'>{crypt.name}</td>
+                                        <td className='crear-label2'>{crypt.price}</td>
+                                        <td className='crear-label2'>{crypt.creation_date}</td>
+                                        <td className='crear-label2'>{crypt.algorithm}</td>
+                                        <td>
+                                        <button className='crear-boton32' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
+                                        </td>
+                                        
+                                    </tr>
+
+                                ))}
+                        </tbody>
+
+                    </table>
+
+
+                </div>
+
+            )
+        }
+    }
+
+
 }
