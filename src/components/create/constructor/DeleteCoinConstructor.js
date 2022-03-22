@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Navbar3 } from "../router/Navbar3";
-import { Navbar4 } from "../router/Navbar4";
+import { Navbar3 } from "../../router/Navbar3";
+import { Navbar4 } from "../../router/Navbar4";
 
 
-export default class Constructor extends Component {
+export default class DeleteCoinConstructor extends Component {
 
     constructor(props) {
         super(props);
@@ -16,9 +16,9 @@ export default class Constructor extends Component {
     }
     borrarDatos = (id) => {
         console.log(id);
-        const API_URL = 'http://localhost:8000/api/crypto/delete/' + id;
-        //const API_URL = 'https://jsonplaceholder.typicode.com/users/'+id;
-        fetch(API_URL)
+        const API_URL = 'http://localhost:8000/api/crypto/delete/'
+        const options = { method: "DELETE" };
+        fetch(API_URL+id, options)
             .then(response => response.json())
             .then((dataResponse) => {
 
@@ -39,7 +39,6 @@ export default class Constructor extends Component {
             .then(response => response.json())
             .then((dataResponse) => {
                 JSON.stringify(dataResponse)
-                console.log(JSON.stringify(dataResponse))
                 this.setState({ data: true, crypto: dataResponse })
             })
 
@@ -50,23 +49,28 @@ export default class Constructor extends Component {
     componentDidMount() {
         this.cargarDatos()
     }
+    
 
     render() {
 
         const { data, crypto } = this.state
-        console.log(crypto);
+        const API_URL = 'http://localhost:8000/api/crypto/delete/{id}'
         if (!data) {
             return <div>Cargando</div>
         } else {
             return (
-                <div className="crear-formulario">
-                    <table className='table'>
-                        <thead className='table-head'>
+                <div className="">
+                    <table className=''>
+                        <thead className='borrar-thead'>
                             <tr >
-                                <th className='index'>#</th>
-                                <th className='table-coin'>Moneda</th>
-                                <th className='table-price'>Precio</th>
-                                <th className='table-price-change'>24h %</th>
+                                <th className='index-borrar'>#</th>
+                                <th className=''>Moneda</th>
+                                <th className=''>Precio</th>
+                                <th className=''>Fecha de creacion</th>
+                                <th className=''>Algoritmo</th>
+                                <th className=''></th>
+
+
                             </tr>
                         </thead>
                         <tbody>
@@ -75,16 +79,16 @@ export default class Constructor extends Component {
                                     //console.log(crypt);
                                     //const { name, price, creation_date, algorithm } = crypt;
                                    
-                                    < tr key={crypt.id} className="crear-formulario2">
-                                        <td className='crear-label2'>{crypt.id}</td>
-                                        <td className='crear-label2'>{crypt.name}</td>
-                                        <td className='crear-label2'>{crypt.price}</td>
-                                        <td className='crear-label2'>{crypt.creation_date}</td>
-                                        <td className='crear-label2'>{crypt.algorithm}</td>
+                                    < tr key={crypt.id} className="">
+                                        <td className=''>{crypt.id}</td>
+                                        <td className=''>{crypt.name}</td>
+                                        <td className=''>{crypt.price}</td>
+                                        <td className=''>{crypt.creation_date}</td>
+                                        <td className=''>{crypt.algorithm}</td>
                                         <td>
-                                        <button className='crear-boton32' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
+                                        <button className='borrar-boton' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
                                         </td>
-                                        
+                                    
                                     </tr>
 
                                 ))}

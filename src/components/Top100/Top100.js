@@ -25,8 +25,8 @@ export const Top100 = () => {
                     <th className='table-coin'>Moneda</th>
                     <th className='table-price'>Precio</th>
                     <th className='table-price-change'>24h %</th>
-                    <th>Capitalizaciòn de mercado</th>
-                    <th>Volumen Ùltimas 24h</th>
+                    <th className='table-market-cap'>Capitalizaciòn de mercado</th>
+                    <th className='table-volume'>Volumen Ùltimas 24h</th>
 
 
                 </tr>
@@ -46,7 +46,7 @@ export const Top100 = () => {
                         <td  className='table-price'>{coin.current_price}$</td>
                         <td  className='table-price-change'>{coin.price_change_percentage_24h}%</td>
                         <td className='table-market-cap'>{coin.market_cap}$</td>
-                        <td>{coin.total_volume}$</td>
+                        <td className='table-volume'>{coin.total_volume}$</td>
                     </tr>
 
                 ))}
