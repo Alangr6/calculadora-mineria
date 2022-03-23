@@ -75,17 +75,17 @@ export default class DeleteDeviceConstructor extends Component {
             return <div>Cargando</div>
         } else {
             return (
-                <div className="">
-                    <table className=''>
-                        <thead className='borrar-thead'>
+                <div className="update-body">
+                    <table className='update-table'>
+                        <thead className=''>
                             <tr >
-                                <th className='index-borrar'>#</th>
-                                <th className=''>Nombre</th>
-                                <th className=''>Precio</th>
-                                <th className=''>Tipo</th>
-                                <th className=''>hashrate</th>
-                                <th className=''>consumo</th>
-                                <th className=''></th>
+                                <th className='update-index'>#</th>
+                                <th className='update-coin'>Nombre</th>
+                                <th className='update-price'>Precio</th>
+                                <th className='update-date'>Tipo</th>
+                                <th className='update-algorithm'>hashrate</th>
+                                <th className='edit-button'>consumo</th>
+                                <th className='edit-button'></th>
 
 
 
@@ -97,15 +97,15 @@ export default class DeleteDeviceConstructor extends Component {
                                     //console.log(device);
                                     //const { name, price, creation_date, algorithm } = device;
                                    
-                                    < tr key={device.id} className="">
-                                        <td className=''>{device.id}</td>
-                                        <td className=''>{device.name}</td>
-                                        <td className=''>{device.price}</td>
-                                        <td className=''>{device.type}</td>
-                                        <td className=''>{device.hashrate}</td>
-                                        <td className=''>{device.comsumption}</td>
+                                    < tr key={device.id} >
+                                        <td className='update-coin'>{device.id}</td>
+                                        <td className='update-price'>{device.name}</td>
+                                        <td className='update-date'>{device.price}</td>
+                                        <td className='update-algorithm'>{device.type}</td>
+                                        <td className='edit-button'>{device.hashrate}</td>
+                                        <td className='edit-button'>{device.comsumption}</td>
                                         <td>
-                                        <button className='borrar-boton' onClick={() => this.borrarDatos(device.id)}>Borrar</button>
+                                        <button className='delete-button' onClick={() => this.borrarDatos(device.id)}>Borrar</button>
                                         
                                         </td>
                                     

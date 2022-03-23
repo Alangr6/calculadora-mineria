@@ -47,7 +47,7 @@ export const UpdateDeviceButton = () => {
                <label className='crear-label' >Energia
                    <input type="number" id='comsumption' className='crear-input' />
                </label>
-               <button onClick={handleSubmit} className='crear-boton2'>
+               <button onClick={handleSubmit} className='crear-boton'>
                    Crear
                </button>
 

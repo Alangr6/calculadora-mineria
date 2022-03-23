@@ -21,8 +21,8 @@ export const Top100 = () => {
         <table className='table'>
             <thead className='table-head'>
                 <tr >
-                    <th className='index'>#</th>
-                    <th className='table-coin'>Moneda</th>
+                    <th className='index-title'>#</th>
+                    <th className='table-coin-title'>Moneda</th>
                     <th className='table-price'>Precio</th>
                     <th className='table-price-change'>24h %</th>
                     <th className='table-market-cap'>Capitalizaciòn de mercado</th>
@@ -35,7 +35,7 @@ export const Top100 = () => {
                 {coins.map(coin => (
                     <tr key={coin.name}>
                         <td className='index'>{coin.market_cap_rank}</td>
-                        <td >
+                        <td className='img-name' >
                             <img className='img' src={coin.image} ></img>
 
                             <span className='table-coin' >

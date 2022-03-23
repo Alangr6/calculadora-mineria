@@ -148,3 +148,70 @@
 .borrar-thead{
     width: 100%;
 }
+.edit-button2{
+    width: 7rem;
+    height: 3rem;
+    background-color: rgb(11, 138, 241);
+    border-radius: 5px;
+   
+
+}
+.delete-button{
+    width: 7rem;
+    height: 3rem;
+    background-color: red;
+    border-radius: 5px;
+}
+.update-body{
+    background-color: white;
+    
+}
+.update-table{
+    width: 100%;
+    border: 0px solid rgb(172, 169, 169);
+    border-spacing: 0;
+    padding: 2rem;
+
+  
+}
+
+.update-coin,
+.update-price,
+.update-date,
+.update-algorithm,
+.edit-button{
+    color: black;
+    width: 18%; 
+    text-align: left;
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    
+    
+    height: 2em;
+    
+    background-color: whitesmoke;
+}
+.update-index{
+    width: 10px;
+    color: black;
+    text-align: left;
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    
+    
+    height: 2em;
+    
+    background-color: whitesmoke;
+}
+.update-index-device{
+    padding-right: 5rem;
+    color: black;
+    text-align: left;
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    
+    
+    height: 2em;
+    
+    background-color: whitesmoke;
+}

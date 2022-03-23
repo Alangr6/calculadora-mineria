@@ -1,11 +1,12 @@
 
-table {
+.table {
   width: 100%;
   border: 1px solid #000;
   border-spacing: 0;
 }
-th, td {
-  width: 20%; 
+.table-coin-title,.img-name, .table-price,.table-price-change,.table-market-cap,.table-volume
+{
+  width: 17%; 
   text-align: left;
   vertical-align: center;
   border: 1px solid #000;
@@ -14,14 +15,20 @@ th, td {
   background-color: rgb(24, 24, 24);
 }
 
-th{
+.table-coin , .table-price,.table-price-change,.table-market-cap,.table-volume{
   color: aliceblue;
   background-color: rgb(24, 24, 24);
   text-align: start;
 }
 
-.index {
-  width: 10px;
+.index,.index-title {
+  width: 1px; 
+  text-align: left;
+  vertical-align: center;
+  border: 1px solid #000;
+  height: 2em;
+  color: aliceblue;
+  background-color: rgb(24, 24, 24);
 }
 .img{
   width: 14px
@@ -33,17 +40,10 @@ th{
   width: 10px;
 
 }
-.table-price{
-   
-    
-}
 
-
-.table-price-change{
-  
-  
-
-}
 .table-market-cap{
-  width: 10px;
+  width: 100px;
+}
+.table-volume{
+  width: 100px;
 }

@@ -76,16 +76,16 @@ export default class DeleteCoinConstructor extends Component {
             return <div>Cargando</div>
         } else {
             return (
-                <div className="">
-                    <table className=''>
-                        <thead className='borrar-thead'>
+                <div className="update-body">
+                    <table className='update-table'>
+                        <thead className=''>
                             <tr >
-                                <th className='index-borrar'>#</th>
-                                <th className=''>Moneda</th>
-                                <th className=''>Precio</th>
-                                <th className=''>Fecha de creacion</th>
-                                <th className=''>Algoritmo</th>
-                                <th className=''></th>
+                                <th className='update-index'>#</th>
+                                <th className='update-coin'>Moneda</th>
+                                <th className='update-price'>Precio</th>
+                                <th className='update-date'>Fecha de creacion</th>
+                                <th className='update-algorithm'>Algoritmo</th>
+                                <th className='edit-button'></th>
 
 
                             </tr>
@@ -97,13 +97,13 @@ export default class DeleteCoinConstructor extends Component {
                                     //const { name, price, creation_date, algorithm } = crypt;
                                    
                                     < tr key={crypt.id} className="">
-                                        <td className=''>{crypt.id}</td>
-                                        <td className=''>{crypt.name}</td>
-                                        <td className=''>{crypt.price}</td>
-                                        <td className=''>{crypt.creation_date}</td>
-                                        <td className=''>{crypt.algorithm}</td>
-                                        <td>
-                                        <button className='borrar-boton' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
+                                        <td className='update-coin'>{crypt.id}</td>
+                                        <td className='update-price'>{crypt.name}</td>
+                                        <td className='update-date'>{crypt.price}</td>
+                                        <td className='update-algorithm'>{crypt.creation_date}</td>
+                                        <td className='edit-button'>{crypt.algorithm}</td>
+                                        <td className="edit-button">
+                                        <button className='delete-button' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
                                         
                                         </td>
                                     

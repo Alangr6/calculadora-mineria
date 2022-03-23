@@ -41,8 +41,8 @@ export const Cambio = () => {
                 <Route path="/actualizar-minero" element={<UpdateMiner/>}/>
                 <Route path="/borrar-minero" element={<DeleteMiner/>}/>
 
-                <Route path="/:id" element={<UpdateCoinButton/>}></Route>
-                <Route path="/:id/" element={<UpdateDeviceButton/>}></Route>
+                <Route path="/:id/crypto" element={<UpdateCoinButton/>}></Route>
+                <Route path="/:id/device" element={<UpdateDeviceButton/>}></Route>
 
 
             </Routes>

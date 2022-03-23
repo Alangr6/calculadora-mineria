@@ -61,17 +61,20 @@ export default class UpdateDeviceConstructor extends Component {
             return <div>Cargando</div>
         } else {
             return (
-                <div className="">
-                    <table className=''>
-                        <thead className='borrar-thead'>
+                <div className="update-body">
+                    <table className='update-table'>
+                        <thead className=''>
                         <tr >
-                                <th className='index-borrar'>#</th>
-                                <th className=''>Nombre</th>
-                                <th className=''>Precio</th>
-                                <th className=''>Tipo</th>
-                                <th className=''>hashrate</th>
-                                <th className=''>consumo</th>
-                                <th className=''></th>
+                                <th className='update-index-device'>#</th>
+                                <th className='update-coin'>Nombre</th>
+                                <th className='update-price'>Precio</th>
+                                <th className='update-date'>Tipo</th>
+                                <th className='update-algorithm'>hashrate</th>
+                                <th className='edit-button'>consumo</th>
+                                <th className='edit-button'></th>
+
+
+
 
 
 
@@ -84,14 +87,14 @@ export default class UpdateDeviceConstructor extends Component {
                                     //const { name, price, creation_date, algorithm } = crypt;
                                    
                                     < tr key={device.id} className="">
-                                       <td className=''>{device.id}</td>
-                                        <td className=''>{device.name}</td>
-                                        <td className=''>{device.price}</td>
-                                        <td className=''>{device.type}</td>
-                                        <td className=''>{device.hashrate}</td>
-                                        <td className=''>{device.comsumption}</td>
-                                        <td>
-                                        <Link to={"/"+device.id+'/' }>Editar</Link>
+                                       <td className='update-index-device'>{device.id}</td>
+                                        <td className='update-coin'>{device.name}</td>
+                                        <td className='update-price'>{device.price}</td>
+                                        <td className='update-date'>{device.type}</td>
+                                        <td className='update-algorithm'>{device.hashrate}</td>
+                                        <td className='edit-button'>{device.comsumption}</td>
+                                        <td className="edit-button">
+                                        <Link to={"/"+device.id+'/device' }><button className="edit-button2">Editar</button></Link>
                                         
                                         </td>
                                     

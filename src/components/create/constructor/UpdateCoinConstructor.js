@@ -35,7 +35,6 @@ export default class UpdateCoinConstructor extends Component {
 
     cargarDatos() {
         const API_URL = 'http://localhost:8000/api/crypto/read';
-        //const API_URL = 'https://jsonplaceholder.typicode.com/users';
         fetch(API_URL)
 
             .then(response => response.json())
@@ -56,21 +55,20 @@ export default class UpdateCoinConstructor extends Component {
     render() {
 
         const { data, crypto } = this.state
-        const API_URL = 'http://localhost:8000/api/crypto/update/'
         if (!data) {
             return <div>Cargando</div>
         } else {
             return (
-                <div className="">
-                    <table className=''>
-                        <thead className='borrar-thead'>
+                <div className="update-body">
+                    <table className='update-table'>
+                        <thead className=''>
                             <tr >
-                                <th className='index-borrar'>#</th>
-                                <th className=''>Moneda</th>
-                                <th className=''>Precio</th>
-                                <th className=''>Fecha de creacion</th>
-                                <th className=''>Algoritmo</th>
-                                <th className=''></th>
+                                <th className='update-index'>#</th>
+                                <th className='update-coin'>Moneda</th>
+                                <th className='update-price'>Precio</th>
+                                <th className='update-date'>Fecha de creacion</th>
+                                <th className='update-algorithm'>Algoritmo</th>
+                                <th className='edit-button'></th>
 
 
                             </tr>
@@ -78,17 +76,15 @@ export default class UpdateCoinConstructor extends Component {
                         <tbody>
                             
                                 {crypto.map((crypt) => (
-                                    //console.log(crypt);
-                                    //const { name, price, creation_date, algorithm } = crypt;
-                                   
+                                
                                     < tr key={crypt.id} className="">
-                                        <td className=''>{crypt.id}</td>
-                                        <td className=''>{crypt.name}</td>
-                                        <td className=''>{crypt.price}</td>
-                                        <td className=''>{crypt.creation_date}</td>
-                                        <td className=''>{crypt.algorithm}</td>
-                                        <td>
-                                        <Link to={"/"+crypt.id }>Editar</Link>
+                                        <td className='update-index'>{crypt.id}</td>
+                                        <td className='update-coin'>{crypt.name}</td>
+                                        <td className='update-price'>{crypt.price}</td>
+                                        <td className='update-date'>{crypt.creation_date}</td>
+                                        <td className='update-algorithm'>{crypt.algorithm}</td>
+                                        <td className="edit-button">
+                                        <Link to={"/"+crypt.id+'/crypto' }><button className="edit-button2">Editar</button></Link>
                                         
                                         </td>
                                     
