@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar5 } from '../router/Navbar5'
 
-export const AddMiner = () => {
+export const AddDevice = () => {
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/device/create";
         fetch(API_URL, {

@@ -1,9 +1,11 @@
 import React from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar5 } from '../router/Navbar5'
-import DeleteDeviceConstructor from './constructor/DeleteDeviceConstructor'
+import { DeleteDeviceConstructor } from './constructor/DeleteDeviceConstructor'
 
-export const DeleteMiner = () => {
+
+
+export const DeleteDevice = () => {
   return (
     <div>
         <Navbar3></Navbar3>

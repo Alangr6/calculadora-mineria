@@ -22,7 +22,7 @@ export const UpdateDeviceButton = () => {
 
     
 
-    const API_URL = "http://localhost:8000/api/device/create";
+    
 
     return (
         

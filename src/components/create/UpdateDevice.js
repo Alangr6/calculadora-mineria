@@ -1,9 +1,10 @@
 import React from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar5 } from '../router/Navbar5'
-import UpdateDeviceConstructor from './constructor/UpdateDeviceConstructor'
+import { UpdateDeviceConstructor } from './constructor/UpdateDeviceConstructor'
 
-export const UpdateMiner = () => {
+
+export const UpdateDevice = () => {
   return (
     <div>
         <Navbar3></Navbar3>

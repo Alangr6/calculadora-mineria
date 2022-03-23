@@ -24,7 +24,7 @@ const EthPrice = () => {
     {coins.map(coin => (
       <div key={coin}>
 
-        <h2 className='table-price'>Ethereum: {coin.current_price}$</h2>
+        <h2 className=''>Ethereum: {coin.current_price}$</h2>
 
       </div>
 

@@ -10,11 +10,11 @@ import { Ethereum } from "../calculadora/ethereum/Ethereum"
 
 import { Home } from "../home/Home"
 import { AddCoin} from "../create/AddCoin"
-import { AddMiner } from "../create/AddMiner"
+import { AddDevice } from "../create/AddDevice"
 import { UpdateCoin } from "../create/UpdateCoin"
 import { DeleteCoin } from "../create/DeleteCoin"
-import { UpdateMiner } from "../create/UpdateMiner"
-import { DeleteMiner } from "../create/DeleteMiner"
+import { UpdateDevice } from "../create/UpdateDevice"
+import { DeleteDevice } from "../create/DeleteDevice"
 import { UpdateCoinButton } from "../create/UpdateCoinButton"
 import { UpdateDeviceButton } from "../create/UpdateDeviceButton"
 
@@ -37,9 +37,9 @@ export const Cambio = () => {
                 <Route path="/borrar-moneda" element={<DeleteCoin/>}/>
 
 
-                <Route path="/mineros" element={<AddMiner/>}/>
-                <Route path="/actualizar-minero" element={<UpdateMiner/>}/>
-                <Route path="/borrar-minero" element={<DeleteMiner/>}/>
+                <Route path="/mineros" element={<AddDevice/>}/>
+                <Route path="/actualizar-minero" element={<UpdateDevice/>}/>
+                <Route path="/borrar-minero" element={<DeleteDevice/>}/>
 
                 <Route path="/:id/crypto" element={<UpdateCoinButton/>}></Route>
                 <Route path="/:id/device" element={<UpdateDeviceButton/>}></Route>

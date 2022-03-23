@@ -24,7 +24,7 @@ const BtcPrice = () => {
       {coins.map(coin => (
         <div key={coin}>
 
-          <h2 className='table-price'>Bitcoin: {coin.current_price}$</h2>
+          <h2 className=''>Bitcoin: {coin.current_price}$</h2>
 
 
         </div>
