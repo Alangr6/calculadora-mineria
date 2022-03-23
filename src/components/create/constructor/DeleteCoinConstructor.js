@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navbar3 } from "../../router/Navbar3";
 import { Navbar4 } from "../../router/Navbar4";
+import { UpdateCoinButton } from "../UpdateCoinButton";
 
 
 export default class DeleteCoinConstructor extends Component {
@@ -18,6 +19,22 @@ export default class DeleteCoinConstructor extends Component {
         console.log(id);
         const API_URL = 'http://localhost:8000/api/crypto/delete/'
         const options = { method: "DELETE" };
+        fetch(API_URL+id, options)
+            .then(response => response.json())
+            .then((dataResponse) => {
+
+                console.log(dataResponse)
+                this.cargarDatos()
+            })
+
+            .catch(console.log()
+
+            )
+    };
+    actualizarDatos = (id) => {
+        console.log(id);
+        const API_URL = 'http://localhost:8000/api/crypto/update/'
+        const options = { method: "PUT" };
         fetch(API_URL+id, options)
             .then(response => response.json())
             .then((dataResponse) => {
@@ -87,6 +104,7 @@ export default class DeleteCoinConstructor extends Component {
                                         <td className=''>{crypt.algorithm}</td>
                                         <td>
                                         <button className='borrar-boton' onClick={() => this.borrarDatos(crypt.id)}>Borrar</button>
+                                        
                                         </td>
                                     
                                     </tr>

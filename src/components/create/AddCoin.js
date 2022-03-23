@@ -8,8 +8,6 @@ export const AddCoin = () => {
 
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/crypto/create";
-      /*   const select = document.getElementById('algorithm');
-        const algorithm = select.options[select.selectedIndex]; */
         fetch(API_URL, {
             method: 'POST',
             body: JSON.stringify({

@@ -5,20 +5,20 @@ import { Navbar4 } from "../../router/Navbar4";
 import { UpdateCoinButton } from "../UpdateCoinButton";
 
 
-export default class UpdateCoinConstructor extends Component {
+export default class UpdateDeviceConstructor extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
             data: false,
-            crypto: [],
+            devices: [],
 
         };
     }
     actualizarDatos = (id) => {
         console.log(id);
-        const API_URL = 'http://localhost:8000/api/crypto/update/'
+        const API_URL = 'http://localhost:8000/api/device/update'
         const options = { method: "PUT" };
         fetch(API_URL+id, options)
             .then(response => response.json())
@@ -34,14 +34,14 @@ export default class UpdateCoinConstructor extends Component {
     };
 
     cargarDatos() {
-        const API_URL = 'http://localhost:8000/api/crypto/read';
+        const API_URL = 'http://localhost:8000/api/device/read';
         //const API_URL = 'https://jsonplaceholder.typicode.com/users';
         fetch(API_URL)
 
             .then(response => response.json())
             .then((dataResponse) => {
                 JSON.stringify(dataResponse)
-                this.setState({ data: true, crypto: dataResponse })
+                this.setState({ data: true, devices: dataResponse })
             })
 
             .catch(console.log()
@@ -55,8 +55,8 @@ export default class UpdateCoinConstructor extends Component {
 
     render() {
 
-        const { data, crypto } = this.state
-        const API_URL = 'http://localhost:8000/api/crypto/update/'
+        const { data, devices } = this.state
+        const API_URL = 'http://localhost:8000/api/device/update/'
         if (!data) {
             return <div>Cargando</div>
         } else {
@@ -64,31 +64,34 @@ export default class UpdateCoinConstructor extends Component {
                 <div className="">
                     <table className=''>
                         <thead className='borrar-thead'>
-                            <tr >
+                        <tr >
                                 <th className='index-borrar'>#</th>
-                                <th className=''>Moneda</th>
+                                <th className=''>Nombre</th>
                                 <th className=''>Precio</th>
-                                <th className=''>Fecha de creacion</th>
-                                <th className=''>Algoritmo</th>
+                                <th className=''>Tipo</th>
+                                <th className=''>hashrate</th>
+                                <th className=''>consumo</th>
                                 <th className=''></th>
+
 
 
                             </tr>
                         </thead>
                         <tbody>
                             
-                                {crypto.map((crypt) => (
+                                {devices.map((device) => (
                                     //console.log(crypt);
                                     //const { name, price, creation_date, algorithm } = crypt;
                                    
-                                    < tr key={crypt.id} className="">
-                                        <td className=''>{crypt.id}</td>
-                                        <td className=''>{crypt.name}</td>
-                                        <td className=''>{crypt.price}</td>
-                                        <td className=''>{crypt.creation_date}</td>
-                                        <td className=''>{crypt.algorithm}</td>
+                                    < tr key={device.id} className="">
+                                       <td className=''>{device.id}</td>
+                                        <td className=''>{device.name}</td>
+                                        <td className=''>{device.price}</td>
+                                        <td className=''>{device.type}</td>
+                                        <td className=''>{device.hashrate}</td>
+                                        <td className=''>{device.comsumption}</td>
                                         <td>
-                                        <Link to={"/"+crypt.id }>Editar</Link>
+                                        <Link to={"/"+device.id+'/' }>Editar</Link>
                                         
                                         </td>
                                     

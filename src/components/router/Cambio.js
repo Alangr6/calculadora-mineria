@@ -16,6 +16,7 @@ import { DeleteCoin } from "../create/DeleteCoin"
 import { UpdateMiner } from "../create/UpdateMiner"
 import { DeleteMiner } from "../create/DeleteMiner"
 import { UpdateCoinButton } from "../create/UpdateCoinButton"
+import { UpdateDeviceButton } from "../create/UpdateDeviceButton"
 
 export const Cambio = () => {
     
@@ -40,7 +41,8 @@ export const Cambio = () => {
                 <Route path="/actualizar-minero" element={<UpdateMiner/>}/>
                 <Route path="/borrar-minero" element={<DeleteMiner/>}/>
 
-                <Route path="/update/:id" element={<UpdateCoinButton/>}></Route>
+                <Route path="/:id" element={<UpdateCoinButton/>}></Route>
+                <Route path="/:id/" element={<UpdateDeviceButton/>}></Route>
 
 
             </Routes>
