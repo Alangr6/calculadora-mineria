@@ -164,35 +164,59 @@
 }
 .update-body{
     background-color: white;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
     
 }
 .update-table{
     width: 100%;
     border: 0px solid rgb(172, 169, 169);
     border-spacing: 0;
-    padding: 2rem;
+    padding-top: 2rem;
 
   
 }
+.update-coin{
+    margin-right: 2rem;
+    color: black;
+    width: 23%; 
+    text-align: center;
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    height: 2em;
+    background-color: whitesmoke;    
+}
 
-.update-coin,
 .update-price,
 .update-date,
-.update-algorithm,
-.edit-button{
+.update-algorithm
+{
     color: black;
-    width: 18%; 
+    width: 15%; 
     text-align: left;
     vertical-align: center;
     border: 1px  rgb(172, 169, 169);
-    
-    
     height: 2em;
-    
     background-color: whitesmoke;
+}
+
+
+.edit-button{
+    text-align: end;
+    margin-right: 14rem;
+    color: black;
+    width: 14%; 
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    height: 2em;
+    background-color: whitesmoke;
+    text-align: center;
 }
 .update-index{
     width: 10px;
+    
     color: black;
     text-align: left;
     vertical-align: center;
@@ -213,5 +237,29 @@
     
     height: 2em;
     
+    background-color: whitesmoke;
+}
+.update-index-coin{
+    text-align: start  ;
+    width: 5%;
+    background-color: whitesmoke;
+
+}
+.update-coin-coin{
+    text-align: start  ;
+    width: 13%; 
+    background-color: whitesmoke;
+
+
+}
+.update-algorithm-coin
+{
+    color: black;
+    width: 15%; 
+    text-align: left;
+    padding-left: 4rem;
+    vertical-align: center;
+    border: 1px  rgb(172, 169, 169);
+    height: 2em;
     background-color: whitesmoke;
 }

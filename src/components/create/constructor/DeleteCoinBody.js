@@ -43,38 +43,23 @@ export const DeleteCoinBody = ({ crypto }) => {
     };
     return (
 
-        <div className='update-body'>
-            <table className='update-table'>
-                <thead className=''>
-                    <tr >
-                        <th className='update-index'>#</th>
-                        <th className='update-coin'>Moneda</th>
-                        <th className='update-price'>Precio</th>
-                        <th className='update-date'>Fecha de creacion</th>
-                        <th className='update-algorithm'>Algoritmo</th>
-                        <th className='edit-button'></th>
-
-
-                    </tr>
-                </thead>
-                <tbody>
+     
+                <table className='update-table'>
                     < tr key={id} className="">
-                        <td className='update-coin'>{id}</td>
-                        <td className='update-price'>{name}</td>
-                        <td className='update-date'>{price}</td>
-                        <td className='update-algorithm'>{creation_date.date}</td>
-                        <td className='edit-button'>{algorithm}</td>
-                        <td className="edit-button">
+                    <td className='update-index-coin'>{id}</td>
+                    <td className='update-coin-coin'>{name}</td>
+                    <td className='update-price'>{price}</td>
+                    <td className='update-date'>{creation_date.date}</td>
+                    <td className='update-algorithm-coin'>{algorithm}</td>
+                    <td className="edit-button">
                             <button className='delete-button' onClick={borrarDatos}>Borrar</button>
                             </td>
                             </tr>
 
-                        </tbody>
+                        </table>
 
                     
 
-            </table>
 
-        </div>
     )
 }

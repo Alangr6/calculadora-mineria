@@ -13,6 +13,10 @@ export const Navbar3 = () => {
     <NavLink  to="/mineros" >
         <button className='crear-button'>Mineros</button>
     </NavLink>
+    
+    <NavLink  to="/productividad" >
+        <button className='crear-button'>Productividad</button>
+    </NavLink>
 
   
 </nav>

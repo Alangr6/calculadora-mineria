@@ -17,6 +17,9 @@ import { UpdateDevice } from "../create/UpdateDevice"
 import { DeleteDevice } from "../create/DeleteDevice"
 import { UpdateCoinButton } from "../create/UpdateCoinButton"
 import { UpdateDeviceButton } from "../create/UpdateDeviceButton"
+import { AddProductivity } from "../create/AddProductivity"
+import { UpdateProductivity } from "../create/UpdateProductivity"
+import { DeleteProductivity } from "../create/DeleteProductivity"
 
 export const Cambio = () => {
     
@@ -40,6 +43,11 @@ export const Cambio = () => {
                 <Route path="/mineros" element={<AddDevice/>}/>
                 <Route path="/actualizar-minero" element={<UpdateDevice/>}/>
                 <Route path="/borrar-minero" element={<DeleteDevice/>}/>
+
+                <Route path="/productividad" element={<AddProductivity/>}/>
+                <Route path="/actualizar-productividad" element={<UpdateProductivity/>}/>
+                <Route path="/borrar-productividad" element={<DeleteProductivity/>}/>
+                
 
                 <Route path="/:id/crypto" element={<UpdateCoinButton/>}></Route>
                 <Route path="/:id/device" element={<UpdateDeviceButton/>}></Route>

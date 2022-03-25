@@ -2,12 +2,11 @@ import React, { Component, useEffect, useState } from "react";
 import { Navbar3 } from "../../router/Navbar3";
 import { Navbar4 } from "../../router/Navbar4";
 import { UpdateCoinButton } from "../UpdateCoinButton";
-import { UpdateDeviceBody } from "./UpdateDeviceBody";
+import { DeleteProductivityBody } from "./DeleteProductivityBody";
+import { UpdateProductivityBody } from "./UpdateProductivityBody";
 
 
-
-
-export const UpdateDeviceConstructor = () => {
+export const UpdateProductivityConstructor = () => {
 
     const [data, setData] = useState([]);
 
@@ -18,7 +17,7 @@ export const UpdateDeviceConstructor = () => {
     }, [])
 
     function cargarDatos() {
-        const API_URL = 'http://localhost:8000/api/device/read';
+        const API_URL = 'http://localhost:8000/api/crypto/device/read';
 
         fetch(API_URL)
             .then(request => request.json())
@@ -36,31 +35,22 @@ export const UpdateDeviceConstructor = () => {
     } else {
         console.log(data);
         return (
-            <div className="update-body">
+            <div className='update-body'>
                 <table className='update-table'>
-
                     <thead className=''>
                         <tr >
-                            <th className='update-index'>#</th>
-                            <th className='update-coin'>Moneda</th>
-                            <th className='update-price'>Precio</th>
-                            <th className='update-date'>Tipo</th>
-                            <th className='update-algorithm'>hashrate</th>
-                            <th className='update-algorithm'>consumo</th>
-
+                            <th className='update-coin-coin'>Moneda</th>
+                            <th className='update-price'>Minero</th>
+                            <th className='update-date'>Beneficio</th>
                             <th className='edit-button'></th>
-
-
                         </tr>
                     </thead>
-                    </table>
-
-                    {data.map((devices) => (
-                        <UpdateDeviceBody devices={devices}></UpdateDeviceBody>
-
-                    ))}
-
+                </table>
+                {data.map((cryptoDevice) => (
+                    <UpdateProductivityBody cryptoDevice={cryptoDevice}></UpdateProductivityBody>
+                ))}
             </div>
+
 
         )
     }

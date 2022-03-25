@@ -6,19 +6,19 @@ import { DeleteDeviceBody } from "./DeleteDeviceBody";
 
 
 
-export const DeleteDeviceConstructor  = () =>  {
+export const DeleteDeviceConstructor = () => {
 
     const [data, setData] = useState([]);
-    
+
     useEffect(() => {
-      cargarDatos()
-      return () => {
-      }
+        cargarDatos()
+        return () => {
+        }
     }, [])
-    
+
     function cargarDatos() {
         const API_URL = 'http://localhost:8000/api/device/read';
-      
+
         fetch(API_URL)
             .then(request => request.json())
             .then((dataResponse) => {
@@ -28,24 +28,41 @@ export const DeleteDeviceConstructor  = () =>  {
             .catch(console.log()
             )
     };
-    
-  
-        if (!data) {
-            return <div>Cargando</div>
-        } else {
-            console.log(data);
-            return (
-                <div>
-                    
-                     {data.map((devices) => (
-                        <DeleteDeviceBody devices={devices}></DeleteDeviceBody>
-                        
-                        ))}
-                </div>
 
-            )
-        }
-    
+
+    if (!data) {
+        return <div>Cargando</div>
+    } else {
+        console.log(data);
+        return (
+            <div className="update-body">
+                <table className='update-table'>
+
+                    <thead className=''>
+                        <tr >
+                            <th className='update-index'>#</th>
+                            <th className='update-coin'>Moneda</th>
+                            <th className='update-price'>Precio</th>
+                            <th className='update-date'>Tipo</th>
+                            <th className='update-algorithm'>hashrate</th>
+                            <th className='update-algorithm'>consumo</th>
+
+                            <th className='edit-button'></th>
+
+
+                        </tr>
+                    </thead>
+                    </table>
+
+                    {data.map((devices) => (
+                        <DeleteDeviceBody devices={devices}></DeleteDeviceBody>
+
+                    ))}
+            </div>
+
+        )
+    }
+
 
 
 }

@@ -89,8 +89,6 @@ export const UpdateCoinButton = () => {
 
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/crypto/update/105";
-      /*   const select = document.getElementById('algorithm');
-        const algorithm = select.options[select.selectedIndex]; */
         fetch(API_URL, {
             method: 'PUT',
             body: JSON.stringify({
@@ -133,3 +131,39 @@ export const UpdateCoinButton = () => {
 </div>
   )
 }
+/////////////////////////////////
+SELECT * FROM `crypto_device` cd 
+inner join device d on cd.device_id = d.id
+WHERE d.name LIKE '%GTX%'
+///////////////////////////////////
+        const [dollarValue, setDollars] = useState(0)
+
+            <div className='input-style3'>
+
+                <label className='label'>Hashrate del minero
+                    <input type="number" className='input-number' placeholder='0' disabled />TH/S
+                </label>
+                <label className='label'>Energia del minero
+                    <input type="number" className='input-number' placeholder='0' />kW
+                </label>
+                <label className='label'>Coste de la electricidad
+                    <input type="number" className='input-number' placeholder='0' />$/kWh
+                </label>
+                <label className='label'>Comision
+                    <input type="number" className='input-number' placeholder='0' value={1} />%
+                </label>
+            </div>
+
+
+            <div className="input-style2">
+
+                <label className='label-2'>Cantidad de Bitcoin minado 24h
+                    <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollars(e.target.value * coins[0].current_price)} />
+                </label>
+                <label className='label-2'>Valor en $
+                    <input type="number" className='input-number' placeholder='0' value={dollarValue} />
+                </label>
+
+            </div>
+
+        

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-export const DeleteDeviceBody = ({ devices }) => {
-    console.log(devices);
-    const { id, name, price, type, hashrate, comsumption } = devices
-
+export const DeleteProductivityBody = ({ cryptoDevice }) => {
+    console.log(cryptoDevice);
+    const {id, crypto, device, benefits } = cryptoDevice
     function borrarDatos() {
-
-        const API_URL = 'http://localhost:8000/api/device/delete/'
+        
+        const API_URL = 'http://localhost:8000/api/crypto/device/delete/'
         const options = { method: "DELETE" };
         fetch(API_URL + id, options)
             .then(response => response.json())
@@ -30,7 +29,7 @@ export const DeleteDeviceBody = ({ devices }) => {
         }
     }, [])
     function cargarDatos() {
-        const API_URL = 'http://localhost:8000/api/device/read';
+        const API_URL = 'http://localhost:8000/api/crypto/device/read';
 
         fetch(API_URL)
             .then(request => request.json())
@@ -44,24 +43,17 @@ export const DeleteDeviceBody = ({ devices }) => {
     };
     return (
 
-
         <table className='update-table'>
-            < tr key={id} className="">
-                <td className='update-index'>{id}</td>
-                <td className='update-coin'>{name}</td>
-                <td className='update-price'>{price}</td>
-                <td className='update-algorithm'>{type}</td>
-                <td className='update-algorithm'>{hashrate}</td>
-                <td className='update-algorithm'>{comsumption}</td>
-                <td className="edit-button">
-                    <button className='delete-button' onClick={borrarDatos}>Borrar</button>
-                </td>
-            </tr>
+        < tr key={id} className="">
+            <td className='update-coin-coin'>{crypto.name}</td>
+            <td className='update-price'>{device.name}</td>
+            <td className='update-date'>{benefits}</td>
+            <td className="edit-button">
+                      <button className='delete-button' onClick={borrarDatos}>Borrar</button>
+                      </td>
+        </tr>
 
-        </table>
-
-
-
-
+    </table>
+   
     )
 }
