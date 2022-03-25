@@ -29,11 +29,8 @@ export const ConverterBtc = ({ }) => {
     };
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/crypto/device/read";
-        fetch(API_URL , 
-            {
-                method: 'GET',
-              
-            });
+        fetch(API_URL,{method: 'GET',})
+            .then()
     }
 
 
