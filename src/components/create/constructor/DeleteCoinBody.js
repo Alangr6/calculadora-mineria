@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 export const DeleteCoinBody = ({ crypto }) => {
     console.log(crypto);
     const { id, name, price, creation_date, algorithm } = crypto
+    
     function borrarDatos() {
         
         const API_URL = 'http://localhost:8000/api/crypto/delete/'

@@ -246,9 +246,10 @@ body{
   .navbar{
       background-color: black;
       display: flex;
-      justify-content: end;
+      justify-content: space-between;
       
   }
+  
   .table-button {
     transition-duration: 0.4s;
     background-color: black; /* Green */
@@ -349,4 +350,13 @@ body{
     transition: 0.5s;
     
 
+}
+.title-login2{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 2rem;
+}
+.title-login{
+    background-color: white;
 }

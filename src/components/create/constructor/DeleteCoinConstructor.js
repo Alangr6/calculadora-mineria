@@ -28,7 +28,7 @@ export const DeleteCoinConstructor = () => {
             )
     };
 
-
+console.log(data);
     if (!data) {
         return <div>Cargando</div>
     } else {

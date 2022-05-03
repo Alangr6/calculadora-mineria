@@ -166,4 +166,24 @@ WHERE d.name LIKE '%GTX%'
 
             </div>
 
-        
+////////////////////////////////////////////////////////////////////
+{productivity.map((cryptoProductivity) => (
+    <ConverterBody cryptoProductivity={cryptoProductivity}></ConverterBody>
+))}
+
+
+
+productivity.map((cryptoProductivity) => {
+                    console.log(cryptoProductivity);
+                    return <div>{cryptoProductivity.benefits}</div>
+
+                }
+                )
+
+
+                
+                {/*  <div>
+                    {productivity.map((cryptoProductivity) => (
+                        <ConverterBody cryptoProductivity={cryptoProductivity}></ConverterBody>
+                    ))}
+                </div> */}
