@@ -9,12 +9,12 @@ export const ConverterBtc = () => {
     const [productivity, setProductivity] = useState([]);
 
 
-    /* useEffect(() => {
+    useEffect(() => {
         cargarDatos()
       return () => {
 
         }
-    }, []) */
+    }, [])
 
 
     function cargarDatos() {
@@ -31,7 +31,7 @@ export const ConverterBtc = () => {
 
             )
     };
-   /*  function cargarDatosProductividad() {
+    function cargarDatosProductividad() {
         const API_URL = 'http://localhost:8000/api/crypto/device/read';
 
         fetch(API_URL)
@@ -42,7 +42,7 @@ export const ConverterBtc = () => {
             })
             .catch(console.log()
             )
-    }; */
+    };
 
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/crypto/device/read";
@@ -57,7 +57,7 @@ export const ConverterBtc = () => {
 
             )
     }
-    console.log(productivity);
+    console.log(data);
 
 
     return (

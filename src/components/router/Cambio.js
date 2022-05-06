@@ -22,6 +22,7 @@ import { UpdateProductivity } from "../create/UpdateProductivity"
 import { DeleteProductivity } from "../create/DeleteProductivity"
 import { CreateUser } from "../login/CreateUser"
 import { Login } from "../login/Login"
+import { UpdateProductivityButton } from "../create/UpdateProductivityButton"
 
 export const Cambio = () => {
     
@@ -53,6 +54,8 @@ export const Cambio = () => {
 
                 <Route path="/:id/crypto" element={<UpdateCoinButton/>}></Route>
                 <Route path="/:id/device" element={<UpdateDeviceButton/>}></Route>
+                <Route path="/:id/crypto/device" element={<UpdateProductivityButton/>}></Route>
+
 
                 <Route path="/create-user" element={<CreateUser/>}></Route>
                 <Route path="/login" element={<Login/>}></Route>

@@ -1,10 +1,55 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import { Navbar3 } from "../router/Navbar3";
 import { Navbar4 } from "../router/Navbar4";
 import { Navbar6 } from "../router/Navbar6";
 
 
 export const AddProductivity = () => {
+    
+    useEffect(() => {
+        cargarDatosCrypto()
+        cargarDatosDevice()
+      return () => {
+
+        }
+    }, [])
+    const [crypto, setCrypto] = useState([]);
+    const [device, setDevice] = useState([]);
+
+
+
+    function cargarDatosCrypto() {
+        const API_URL = 'http://localhost:8000/api/crypto/read';
+
+        fetch(API_URL)
+            .then(request => request.json())
+            .then((dataResponse) => {
+                setCrypto(dataResponse.data)
+                console.log(dataResponse.data);
+            })
+
+            .catch(console.log()
+
+            )
+    };
+    function cargarDatosDevice() {
+        const API_URL = 'http://localhost:8000/api/device/read';
+
+        fetch(API_URL)
+            .then(request => request.json())
+            .then((dataResponse) => {
+                setDevice(dataResponse.data)
+                console.log(dataResponse);
+            })
+
+            .catch(console.log()
+
+            )
+    };
+    console.log(crypto);
+    console.log(device);
+
+
 
 
     function handleSubmit(e) {
@@ -35,18 +80,24 @@ export const AddProductivity = () => {
                    
                     <label className="crear-label">Crypto
                         <select id="crypto_id" className='crear-select'>
-                            <option value="1">Bitcoin</option>
-                            <option value="31"> Ethereum</option>
+                        {crypto.map((crypto) => {
+                            return <option value={crypto.id}>{crypto.name}</option>
+
+                        }
+                        )} 
                         </select>
                     </label>
                     <label className="crear-label">Crypto
                         <select id="device_id" className='crear-select'>
-                            <option value="1">minero</option>
-                            <option value="31"> minero2</option>
+                        {device.map((device) => {
+                            return <option value={device.id}>{device.name}</option>
+
+                        }
+                        )}
                         </select>
                     </label>
-                    <label className='crear-label'>Nombre
-                        <input name='name' type="text" className='crear-input' id="name" />
+                    <label className='crear-label'>Beneficio
+                        <input name='name' type="number" className='crear-input' id="name" />
                     </label>
                   
                     <button onClick={handleSubmit} className='crear-boton2' >
