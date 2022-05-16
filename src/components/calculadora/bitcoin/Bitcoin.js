@@ -23,7 +23,6 @@ export const Bitcoin = () => {
 
     return (
         <div>
-            <Navbar2></Navbar2>
             <ConverterBtc coins={coins}></ConverterBtc>
             <BtcPrice coins={coins}></BtcPrice>
 

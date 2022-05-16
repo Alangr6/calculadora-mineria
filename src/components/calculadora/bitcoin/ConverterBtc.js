@@ -11,7 +11,8 @@ export const ConverterBtc = () => {
 
     useEffect(() => {
         cargarDatos()
-      return () => {
+        cargarDatosProductividad()
+        return () => {
 
         }
     }, [])
@@ -24,7 +25,6 @@ export const ConverterBtc = () => {
             .then(request => request.json())
             .then((dataResponse) => {
                 setData(dataResponse.data)
-                console.log(dataResponse);
             })
 
             .catch(console.log()
@@ -37,8 +37,8 @@ export const ConverterBtc = () => {
         fetch(API_URL)
             .then(request => request.json())
             .then((dataResponse2) => {
-                setProductivity(dataResponse2)
-                console.log(dataResponse2);
+                setProductivity(dataResponse2.data)
+                console.log(dataResponse2.data);
             })
             .catch(console.log()
             )
@@ -49,44 +49,49 @@ export const ConverterBtc = () => {
         fetch(API_URL, { method: 'GET' })
             .then(response => response.json())
             .then((dataResponse2) => {
-                setProductivity(dataResponse2)
-                console.log(dataResponse2);
+                setProductivity(dataResponse2.data)
+                console.log(dataResponse2.data);
             })
 
             .catch(console.log()
 
             )
     }
-    console.log(data);
+    console.log(productivity);
 
 
     return (
 
-        <div className="input-style">
-            <form className="rellenar-style">
-                <label className='label-1'>Dinero que quieres invertir
-                    <input type="number" className='rellenar-number' placeholder='0' />$
-                </label>
-                <button type='button' className='boton-calculadora' onClick={handleSubmit}>
-                    Calcular
-                </button>
-                <label className="crear-label">Crypto
-                    <select className='crear-select'>
-                        <option value="-1">Sin filtro</option>
-                        {data.map((crypto) => {
-                            return <option value={crypto.id}>{crypto.name}</option>
+        <div className="">
+            <form className="input-style">
+                <div className="calculator-interface">
+                    <div className="rellenar-boton">
+                        <label className='label-1'>Dinero que quieres invertir
+                            <input type="number" className='rellenar-number' placeholder='0' />$
+                        </label>
+                        <button type='button' className='boton-calculadora' onClick={handleSubmit}>
+                            Calcular
+                        </button>
 
-                        }
-                        )}
-                    </select>
-                </label>
-               
-                        {/* <div>{JSON.stringify(productivity)}</div> */}
+                    </div>
+                    <label className="crypto-select">Cripto
+                        <select className='crear-select'>
+                            <option value="-1">Sin filtro</option>
+                            {data.map((crypto) => {
+                                return <option value={crypto.id}>{crypto.name}</option>
+
+                            }
+                            )}
+                        </select>
+                    </label>
+                </div>
 
 
             </form>
+            <div className='productivity'>{productivity.map((productivity) => {
+                return <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
+            })}</div>
 
-            
 
         </div>
 

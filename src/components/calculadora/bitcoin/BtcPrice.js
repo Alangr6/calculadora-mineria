@@ -12,24 +12,56 @@ const BtcPrice = () => {
   useEffect(() => {
     fetch(res)
       .then(response => response.json())
-      .then(data => setCoins(data.slice(0,1)))
+      .then(data => setCoins(data.slice(0, 2)))
 
   }, [])
+  const [dollarValue, setDollars] = useState(0)
+  const [dollarValueEth, setDollarsEth] = useState(0)
+
 
   return (
 
 
-    <div className='precio-junto'>
+    <div className=''>
 
-      {coins.map(coin => (
-        <div key={coin}>
+      <div className="converter">
+        <div className="input-style2">
 
-          <h2 className=''>Bitcoin: {coin.current_price}$</h2>
-
+          <label className='label-2'>Cantidad de Bitcoin minado 24h
+            <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollars(e.target.value * coins[0].current_price)} />
+          </label>
+          <label className='label-2'>Valor en $
+            <input type="number" className='input-number' placeholder='0' value={dollarValue} />
+          </label>
 
         </div>
 
-      ))}
+        <div className="input-style2-1">
+
+          <label className='label-2'>Cantidad de Ethereum minado 24h
+            <input type="number" className='input-number' placeholder='0' onChange={(e) => setDollarsEth(e.target.value * coins[1].current_price)} />
+          </label>
+          <label className='label-2'>Valor en $
+            <input type="number" className='input-number' placeholder='0' value={dollarValueEth} />
+          </label>
+
+        </div>
+
+      </div >
+
+      <div className='klk'>
+        {coins.map(coin => (
+          <div className="price" key={coin}>
+
+            <h2 className=''>{coin.name}: {coin.current_price}$</h2>
+
+
+          </div>
+
+        ))}
+      </div>
+
+
 
     </div>
 

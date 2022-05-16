@@ -73,12 +73,12 @@ export const AddProductivity = () => {
         <div>
                <Navbar3></Navbar3>
                <Navbar6></Navbar6>
-               <h1 className='crear-titulo'>Add Productivity</h1>
+               <h1 className='crear-titulo'>Anadir Productividad</h1>
                 <form action={API_URL} method="POST" className="crear-formulario" >
                     
                   
                    
-                    <label className="crear-label">Crypto
+                    <label className="crear-label">Moneda
                         <select id="crypto_id" className='crear-select'>
                         {crypto.map((crypto) => {
                             return <option value={crypto.id}>{crypto.name}</option>
@@ -87,7 +87,7 @@ export const AddProductivity = () => {
                         )} 
                         </select>
                     </label>
-                    <label className="crear-label">Crypto
+                    <label className="crear-label">Dispositivo
                         <select id="device_id" className='crear-select'>
                         {device.map((device) => {
                             return <option value={device.id}>{device.name}</option>
