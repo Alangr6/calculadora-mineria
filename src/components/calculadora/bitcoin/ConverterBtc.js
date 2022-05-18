@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { ConverterBody } from './ConverterBody';
+import axios from "axios"
 
 
 export const ConverterBtc = () => {
@@ -9,13 +9,17 @@ export const ConverterBtc = () => {
     const [productivity, setProductivity] = useState([]);
 
 
+
     useEffect(() => {
         cargarDatos()
         cargarDatosProductividad()
+        handleSubmit()
         return () => {
 
         }
     }, [])
+
+
 
 
     function cargarDatos() {
@@ -38,7 +42,6 @@ export const ConverterBtc = () => {
             .then(request => request.json())
             .then((dataResponse2) => {
                 setProductivity(dataResponse2.data)
-                console.log(dataResponse2.data);
             })
             .catch(console.log()
             )
@@ -50,15 +53,15 @@ export const ConverterBtc = () => {
             .then(response => response.json())
             .then((dataResponse2) => {
                 setProductivity(dataResponse2.data)
-                console.log(dataResponse2.data);
             })
 
-            .catch(console.log()
 
-            )
+        return <div className='productivity'>{productivity.map((productivity) => {
+            <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
+        })}</div>
     }
-    console.log(productivity);
 
+    console.log(handleSubmit);
 
     return (
 
@@ -78,7 +81,7 @@ export const ConverterBtc = () => {
                         <select className='crear-select'>
                             <option value="-1">Sin filtro</option>
                             {data.map((crypto) => {
-                                return <option value={crypto.id}>{crypto.name}</option>
+                                return <option key={crypto.id} value={crypto.id}>{crypto.name}</option>
 
                             }
                             )}
@@ -91,7 +94,6 @@ export const ConverterBtc = () => {
             <div className='productivity'>{productivity.map((productivity) => {
                 return <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
             })}</div>
-
 
         </div>
 

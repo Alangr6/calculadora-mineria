@@ -3,7 +3,7 @@ import React from 'react'
 export const CreateUser = () => {
 
     function handleSubmit(e) {
-        const API_URL = "http://localhost:8000/login/create";
+        const API_URL = "http://localhost:8000/api/login/create";
         fetch(API_URL, {
             method: 'POST',
             body: JSON.stringify({
