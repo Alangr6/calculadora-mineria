@@ -9,7 +9,16 @@ export const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
 
+    useEffect(() => {
+        const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
+        if(loggedUserJSON) {
+            const user = JSON.parse(loggedUserJSON)
+            setUser(user)
+        }
+    }, [])
+    
 
 
     const API_URL = "http://localhost:8000/api/login_check";
@@ -19,16 +28,25 @@ export const Login = () => {
         e.preventDefault()
 
         try {
-        const token = await loginService.loginFunction({
+        const user = await loginService.loginFunction({
                 username,
                 password
             })
-            console.log(token);
-            setUser(token)
+
+            window.localStorage.setItem(
+                'loggedNoteAppUser', JSON.stringify(user)
+            )
+
+
+            console.log(user);
+            setUser(user)
             setUsername('')
             setPassword('')
         } catch (err) {
-            
+            setErrorMessage('Usuario o contrasena incorrectas')
+            setTimeout(() => {
+                setErrorMessage(null)
+            }, 4000);
         }
 
       
@@ -39,6 +57,7 @@ export const Login = () => {
     return (
         <div className='title-login'>
             <h1 className='title-login2'>Iniciar sesion</h1>
+            <h4 className='error-message'>{errorMessage}</h4>
             <form method='' className="crear-formulario" >
 
                 <label className='crear-label'>Email
