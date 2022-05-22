@@ -12,35 +12,45 @@ export const Login = () => {
     const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    /* const headers = new Headers()
-    headers.append('Content-Type', 'application/json') */
+   
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
-        if(loggedUserJSON) {
+        if (loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON)
             setUser(user)
-/*             headers.append('X-User-Token',loggedUserJSON)
- */        }
+        }
     }, [])
-    
-    
 
 
-  
+
+    const baseUrl = 'http://localhost:8000/api/login_check'
+
+    const loginFunction = async credentials => {
+        axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+        const { data } = await axios.post(baseUrl, credentials, {
+            headers: {
+                Accept: 'application/json',
+            }
+        }).then(res => console.log(res)).catch(err => console.log(err))
+        console.log(data.token);
+        console.log(credentials);
+        return data
+    }
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         try {
-        const user = await loginService.loginFunction({
+            const user = await loginFunction({
                 username,
                 password
             })
 
             window.localStorage.setItem(
-                'loggedNoteAppUser', JSON.stringify(user)
+                'loggedNoteAppUser', JSON.stringify(user.token)
             )
-
 
             console.log(user);
             setUser(user)
@@ -53,10 +63,10 @@ export const Login = () => {
             }, 4000);
         }
 
-      
+
     }
 
-    
+
 
     return (
         <div className='title-login'>
@@ -65,10 +75,10 @@ export const Login = () => {
             <form method='' className="crear-formulario" >
 
                 <label className='crear-label'>Email
-                    <input value={username} onChange={({target}) => setUsername(target.value)} name='username' type="email" className='crear-input' id="username" />
+                    <input value={username} onChange={({ target }) => setUsername(target.value)} name='username' type="email" className='crear-input' id="username" />
                 </label>
                 <label className='crear-label'>Password
-                    <input value={password} onChange={({target}) => setPassword(target.value)} name='password' type="password" className='crear-input' id="password" />
+                    <input value={password} onChange={({ target }) => setPassword(target.value)} name='password' type="password" className='crear-input' id="password" />
                 </label>
 
 
@@ -77,7 +87,7 @@ export const Login = () => {
                 </button>
 
             </form>
-    
+
         </div>
 
     )
