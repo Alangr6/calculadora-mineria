@@ -4,6 +4,7 @@ import loginService from './LoginFunction';
 
 
 export const Login = () => {
+    const API_URL = "http://localhost:8000/api/login_check";
 
     const [data, setData] = useState([]);
     const [username, setUsername] = useState('');
@@ -11,17 +12,20 @@ export const Login = () => {
     const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
+    /* const headers = new Headers()
+    headers.append('Content-Type', 'application/json') */
+
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
         if(loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON)
             setUser(user)
-        }
+/*             headers.append('X-User-Token',loggedUserJSON)
+ */        }
     }, [])
     
+    
 
-
-    const API_URL = "http://localhost:8000/api/login_check";
 
   
     const handleSubmit = async (e) => {
