@@ -7,20 +7,27 @@ export const ConverterBtc = () => {
 
     const [data, setData] = useState([]);
     const [productivity, setProductivity] = useState([]);
+    const [loading, setLoading] = useState([]);
+
 
 
 
     useEffect(() => {
         cargarDatos()
-        cargarDatosProductividad()
-        handleSubmit()
-        return () => {
-
-        }
+        getUsers()
+        //fetchData()
+      
     }, [])
 
 
 
+   /*  async function fetchData() {
+        const API_URL = 'http://localhost:8000/api/crypto/read';
+        const res = await axios.get(API_URL)
+        setProductivity(res.data.data);
+        return res.data.data
+    } */
+    
 
     function cargarDatos() {
         const API_URL = 'http://localhost:8000/api/crypto/read';
@@ -35,7 +42,7 @@ export const ConverterBtc = () => {
 
             )
     };
-    function cargarDatosProductividad() {
+    /* function cargarDatosProductividad() {
         const API_URL = 'http://localhost:8000/api/crypto/device/read';
 
         fetch(API_URL)
@@ -45,24 +52,37 @@ export const ConverterBtc = () => {
             })
             .catch(console.log()
             )
-    };
+    }; */
 
-    function handleSubmit(e) {
-        const API_URL = "http://localhost:8000/api/crypto/device/read";
-        fetch(API_URL, { method: 'GET' })
-            .then(response => response.json())
-            .then((dataResponse2) => {
-                setProductivity(dataResponse2.data)
+    /*   function handleSubmit(e) {
+          const API_URL = "http://localhost:8000/api/crypto/device/read";
+          fetch(API_URL, { method: 'GET' })
+              .then(response => response.json())
+              .then((dataResponse2) => {
+                  setProductivity(dataResponse2.data)
+              })
+  
+  
+          return <div className='productivity'>{productivity.map((productivity) => {
+              <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
+          })}</div>
+      } */
+
+    const getUsers = () => {
+        axios
+            .get('http://localhost:8000/api/crypto/device/read')
+            .then((res) => {
+                setProductivity(res.data.data);
+                return 
             })
-
-
-        return <div className='productivity'>{productivity.map((productivity) => {
-            <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
-        })}</div>
-    }
-
-    console.log(handleSubmit);
-
+            .catch((err) => {
+                // Error handling
+                setLoading(false);
+                console.log(err);
+                return null;
+            });
+    };
+    console.log(productivity);
     return (
 
         <div className="">
@@ -72,7 +92,7 @@ export const ConverterBtc = () => {
                         <label className='label-1'>Dinero que quieres invertir
                             <input type="number" className='rellenar-number' placeholder='0' />$
                         </label>
-                        <button type='button' className='boton-calculadora' onClick={handleSubmit}>
+                        <button type='button' className='boton-calculadora' onClick={getUsers}>
                             Calcular
                         </button>
 
@@ -89,12 +109,12 @@ export const ConverterBtc = () => {
                     </label>
                 </div>
 
-
+                            
             </form>
+            
             <div className='productivity'>{productivity.map((productivity) => {
-                return <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
-            })}</div>
-
+                    <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
+                })}</div>
         </div>
 
 

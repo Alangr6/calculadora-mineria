@@ -17,7 +17,7 @@ export const Login = () => {
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
         if (loggedUserJSON) {
-            const user = JSON.parse(loggedUserJSON)
+            /* const user = JSON(loggedUserJSON) */
             setUser(user)
         }
     }, [])
@@ -32,7 +32,7 @@ export const Login = () => {
             headers: {
                 Accept: 'application/json',
             }
-        }).then(res => console.log(res)).catch(err => console.log(err))
+        })/* .then(res => console.log(res)).catch(err => console.log(err)) */
         console.log(data.token);
         console.log(credentials);
         return data
@@ -49,10 +49,10 @@ export const Login = () => {
             })
 
             window.localStorage.setItem(
-                'loggedNoteAppUser', JSON.stringify(user.token)
+                'loggedNoteAppUser', user.token
             )
 
-            console.log(user);
+            console.log(user.token);
             setUser(user)
             setUsername('')
             setPassword('')
