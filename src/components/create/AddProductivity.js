@@ -9,6 +9,7 @@ export const AddProductivity = () => {
     useEffect(() => {
         cargarDatosCrypto()
         cargarDatosDevice()
+        
       return () => {
 
         }
@@ -20,12 +21,13 @@ export const AddProductivity = () => {
 
     function cargarDatosCrypto() {
         const API_URL = 'http://localhost:8000/api/crypto/read';
-
-        fetch(API_URL)
+        const token = {headers: {
+            'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+        }}
+        fetch(API_URL,token)
             .then(request => request.json())
             .then((dataResponse) => {
                 setCrypto(dataResponse.data)
-                console.log(dataResponse.data);
             })
 
             .catch(console.log()
@@ -34,20 +36,20 @@ export const AddProductivity = () => {
     };
     function cargarDatosDevice() {
         const API_URL = 'http://localhost:8000/api/device/read';
-
-        fetch(API_URL)
+        const token = {headers: {
+            'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+        }}
+        fetch(API_URL,token)
             .then(request => request.json())
             .then((dataResponse) => {
                 setDevice(dataResponse.data)
-                console.log(dataResponse);
             })
 
             .catch(console.log()
 
             )
     };
-    console.log(crypto);
-    console.log(device);
+
 
 
 
@@ -55,6 +57,9 @@ export const AddProductivity = () => {
     function handleSubmit(e) {
         const API_URL = "http://localhost:8000/api/crypto/device/create";
         fetch(API_URL, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+            },
             method: 'POST',
             body: JSON.stringify({
                 crypto_id : window.document.getElementById('crypto_id').value ,
@@ -97,7 +102,7 @@ export const AddProductivity = () => {
                         </select>
                     </label>
                     <label className='crear-label'>Beneficio
-                        <input name='name' type="number" className='crear-input' id="name" />
+                        <input name='benefits' type="number" className='crear-input' id="benefits" />
                     </label>
                   
                     <button onClick={handleSubmit} className='crear-boton2' >

@@ -15,8 +15,10 @@ export const UpdateProductivityBody = ({ cryptoDevice }) => {
     }, [])
     function cargarDatos() {
         const API_URL = 'http://localhost:8000/api/crypto/device/read';
-
-        fetch(API_URL)
+        const token = {headers: {
+            'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+        }}
+        fetch(API_URL,token)
             .then(request => request.json())
             .then((dataResponse) => {
                 setData(dataResponse.data)

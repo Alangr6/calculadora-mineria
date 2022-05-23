@@ -7,6 +7,9 @@ export const AddDevice = () => {
         const API_URL = "http://localhost:8000/api/device/create";
         fetch(API_URL, {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+            },
             body: JSON.stringify({
                 type : window.document.getElementById('type').value,
                 name : window.document.getElementById('name').value ,

@@ -34,7 +34,6 @@ export const Login = () => {
             }
         })/* .then(res => console.log(res)).catch(err => console.log(err)) */
         console.log(data.token);
-        console.log(credentials);
         return data
     }
 

@@ -7,6 +7,9 @@ export const UpdateDeviceButton = () => {
         fetch(API_URL + window.location.pathname, 
             {
                 method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+                },
                 body: JSON.stringify({
                     type : window.document.getElementById('type').value,
                     name : window.document.getElementById('name').value ,

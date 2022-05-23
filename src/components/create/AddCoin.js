@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar3 } from "../router/Navbar3";
 import { Navbar4 } from "../router/Navbar4";
+import axios from 'axios';
 
 
 export const AddCoin = () => {
@@ -10,6 +11,9 @@ export const AddCoin = () => {
         const API_URL = "http://localhost:8000/api/crypto/create";
         fetch(API_URL, {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+            },
             body: JSON.stringify({
                 name : window.document.getElementById('name').value ,
                 price : window.document.getElementById('price').value,

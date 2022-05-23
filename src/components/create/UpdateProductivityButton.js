@@ -17,6 +17,9 @@ export const UpdateProductivityButton = () => {
         fetch(API_URL + window.location.pathname,
             {
                 method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+                },
                 body: JSON.stringify({
                     crypto_id: window.document.getElementById('crypto_id').value,
                     device_id: window.document.getElementById('device_id').value,
