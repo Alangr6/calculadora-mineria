@@ -6,18 +6,12 @@ export const DeleteProductivityBody = ({ cryptoDevice }) => {
     function borrarDatos() {
         
         const API_URL = 'http://localhost:8000/api/crypto/device/delete/'
-        const options = { method: "DELETE" };
-        fetch(API_URL + id, options)
-            .then(response => response.json())
-            .then((dataResponse) => {
-
-                console.log(dataResponse)
-                this.cargarDatos()
+        fetch(API_URL + id, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+            }
             })
-
-            .catch(console.log()
-
-            )
     };
     const [data, setData] = useState([]);
 

@@ -5,9 +5,7 @@ export const UpdateCoinButton = () => {
     function handleSubmit(e) {
         console.log(window.location.href);
         const API_URL = "http://localhost:8000/api/crypto/update";
-        const token = {headers: {
-            'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
-        }}
+      
         fetch(API_URL+window.location.pathname ,
             {
                 method: 'PUT',

@@ -7,19 +7,12 @@ export const DeleteCoinBody = ({ crypto }) => {
     function borrarDatos() {
         
         const API_URL = 'http://localhost:8000/api/crypto/delete/'
-        const options = { method: "DELETE" };
-        const token = {headers: {
-            'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
-        }}
-        fetch(API_URL + id, options)
-            .then(response => response.json())
-            .then((dataResponse) => {
-                cargarDatos()
+        fetch(API_URL + id, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('loggedNoteAppUser')}`
+            }
             })
-
-            .catch(console.log()
-
-            )
     };
     const [data, setData] = useState([]);
 
