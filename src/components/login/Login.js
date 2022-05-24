@@ -12,7 +12,7 @@ export const Login = () => {
     const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
-   
+
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
@@ -65,12 +65,18 @@ export const Login = () => {
 
     }
 
+    const logout = async (e) => {
+        e.preventDefault()
+
+        await window.localStorage.clear()
+
+    }
 
 
     return (
         <div className='title-login'>
             <h1 className='title-login2'>Iniciar sesion</h1>
-            <h4 className='error-message'>{errorMessage}</h4>
+            <div className='error-message'>{errorMessage}</div>
             <form method='' className="crear-formulario" >
 
                 <label className='crear-label'>Email
@@ -84,8 +90,13 @@ export const Login = () => {
                 <button onClick={handleSubmit} className='crear-boton2' >
                     Iniciar sesion
                 </button>
+                <button onClick={(e) => logout(e)} className='crear-boton4' >
+                Cerrar sesion
+            </button>
 
             </form>
+
+            
 
         </div>
 

@@ -8,10 +8,10 @@ export const Navbar6 = () => {
         <button className='crear-button'>Crear</button>
     </Link>
 
-    <NavLink  to="/actualizar-productividad" >
+  {/*   <NavLink  to="/actualizar-productividad" >
         <button className='crear-button'>Actualizar</button>
         
-    </NavLink>
+    </NavLink> */}
     <NavLink  to="/borrar-productividad" >
         <button className='crear-button'>Borrar</button>
     </NavLink>
