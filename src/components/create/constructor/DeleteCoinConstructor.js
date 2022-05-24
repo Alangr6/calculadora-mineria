@@ -32,7 +32,7 @@ export const DeleteCoinConstructor = () => {
 
 console.log(data);
     if (!data) {
-        return <div>Cargando</div>
+        return <div className="log-field">Tienes que Iniciar sesion para ver este campo</div>
     } else {
         return (
 

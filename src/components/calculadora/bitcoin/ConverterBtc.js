@@ -14,19 +14,11 @@ export const ConverterBtc = () => {
 
     useEffect(() => {
         cargarDatos()
-        getUsers()
-        //fetchData()
       
     }, [])
 
 
 
-   /*  async function fetchData() {
-        const API_URL = 'http://localhost:8000/api/crypto/read';
-        const res = await axios.get(API_URL)
-        setProductivity(res.data.data);
-        return res.data.data
-    } */
     
 
     function cargarDatos() {
@@ -42,38 +34,13 @@ export const ConverterBtc = () => {
 
             )
     };
-    /* function cargarDatosProductividad() {
-        const API_URL = 'http://localhost:8000/api/crypto/device/read';
-
-        fetch(API_URL)
-            .then(request => request.json())
-            .then((dataResponse2) => {
-                setProductivity(dataResponse2.data)
-            })
-            .catch(console.log()
-            )
-    }; */
-
-    /*   function handleSubmit(e) {
-          const API_URL = "http://localhost:8000/api/crypto/device/read";
-          fetch(API_URL, { method: 'GET' })
-              .then(response => response.json())
-              .then((dataResponse2) => {
-                  setProductivity(dataResponse2.data)
-              })
   
-  
-          return <div className='productivity'>{productivity.map((productivity) => {
-              <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
-          })}</div>
-      } */
 
     const getUsers = () => {
         axios
             .get('http://localhost:8000/api/crypto/device/read')
             .then((res) => {
                 setProductivity(res.data.data);
-                return 
             })
             .catch((err) => {
                 // Error handling
@@ -112,9 +79,11 @@ export const ConverterBtc = () => {
                             
             </form>
             
-            <div className='productivity'>{productivity.map((productivity) => {
-                    <div className='productivity-1'>{productivity.device.name} | produce: {productivity.benefits} {productivity.crypto.name} | PRECIO:{productivity.device.price}</div>
+            <div className='productivity'>{productivity.map((element) => {
+                
+                return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>
                 })}</div>
+               
         </div>
 
 

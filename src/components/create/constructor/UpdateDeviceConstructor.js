@@ -34,7 +34,7 @@ export const UpdateDeviceConstructor = () => {
 
 
     if (!data) {
-        return <div>Cargando</div>
+        return <div className="log-field">Tienes que Iniciar sesion para ver este campo</div>
     } else {
         console.log(data);
         return (
