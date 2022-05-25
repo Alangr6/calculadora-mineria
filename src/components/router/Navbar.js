@@ -15,7 +15,7 @@ export const Navbar = () => {
             </NavLink>
             </nav>
              
-            <nav>
+            <nav className='navbar-buttons'>
             <NavLink to="/" >
                 <button className='table-button'>Home</button>
             </NavLink>

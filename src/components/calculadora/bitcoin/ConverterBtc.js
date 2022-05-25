@@ -64,7 +64,7 @@ export const ConverterBtc = () => {
                         </button>
 
                     </div>
-                    <label className="crypto-select">Cripto
+                    {/* <label className="crypto-select">Cripto
                         <select className='crear-select'>
                             <option value="-1">Sin filtro</option>
                             {data.map((crypto) => {
@@ -73,7 +73,7 @@ export const ConverterBtc = () => {
                             }
                             )}
                         </select>
-                    </label>
+                    </label> */}
                 </div>
 
                             
