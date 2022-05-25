@@ -69,10 +69,10 @@ export const ConverterBtc = () => {
 
                     </div>
                     <label className="crypto-select">Cripto
-                        <select className='crear-select'>
+                        <select id='filtro' className='crear-select'>
                             <option value="-1">Sin filtro</option>
                             {data.map((crypto) => {
-                                return <option key={crypto.id} value={crypto.id}>{crypto.name}</option>
+                                return <option key={crypto.id} value={crypto.name}>{crypto.name}</option>
                             }
                             )}
                         </select>
@@ -84,11 +84,15 @@ export const ConverterBtc = () => {
 
             <div className='productivity'>{productivity.map((element) => {
                 const number = window.document.getElementById('number').value 
-                if (number >= element.device.price) {
+                const filtro = window.document.getElementById('filtro').value 
+                console.log(filtro, element.crypto.name);
+                if (number >= element.device.price && filtro == element.crypto.name) {
                     return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>    
                 } else if(number < 600 && primero){
                     primero = false
                     return <div className='error-message2'>{error}</div>
+                } else if(filtro == '-1'){
+                    return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>    
                 }
                 
             })}</div>
