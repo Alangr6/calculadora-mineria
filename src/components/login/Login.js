@@ -68,7 +68,7 @@ export const Login = () => {
     const logout = async (e) => {
         e.preventDefault()
 
-        await window.localStorage.clear()
+        await window.localStorage.removeItem('loggedNoteAppUser')
 
     }
 
