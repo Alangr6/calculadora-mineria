@@ -507,13 +507,16 @@ body{
 }
 
 .rellenar-boton{
-    padding-right: 0;
+    padding-right: 2.5rem;
 }
 .input-style{
     padding-right: 0;
 }
 .productivity{
-    padding-left: 0;
+    padding-left: 2rem;
     padding-top: 28px;
+}
+.price{
+    padding-left: 4rem;
 }
   }

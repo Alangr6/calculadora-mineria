@@ -4,9 +4,7 @@ import React from 'react'
 
 import { Top100 } from "../Top100/Top100"
 import { Navbar } from "./Navbar"
-import { Navbar2 } from "./Navbar2"
 import { Bitcoin } from "../calculadora/bitcoin/Bitcoin"
-import { Ethereum } from "../calculadora/ethereum/Ethereum"
 
 import { Home } from "../home/Home"
 import { AddCoin} from "../create/AddCoin"
@@ -35,7 +33,6 @@ export const Cambio = () => {
              
                 <Route path="/table" element={<Top100/>}/>
                 <Route path="/bitcoin" element={<Bitcoin/>}/>
-                <Route path="/ethereum" element={<Ethereum/>}/>
                 <Route path="/" element={<Home/>}/>
 
                 <Route path="/monedas" element={<AddCoin/>}/>

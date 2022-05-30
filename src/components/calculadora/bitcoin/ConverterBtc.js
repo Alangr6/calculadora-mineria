@@ -8,17 +8,11 @@ export const ConverterBtc = () => {
     const [data, setData] = useState([]);
     const [productivity, setProductivity] = useState([]);
     const [loading, setLoading] = useState([]);
-    const [errorMessage, setErrorMessage] = useState('');
-
-
 
     useEffect(() => {
         cargarDatos()
 
     }, [])
-
-
-
 
 
     function cargarDatos() {
@@ -35,10 +29,10 @@ export const ConverterBtc = () => {
             )
     };
 
-     const error = 'el numero debe ser mayor de 599'
+    const error = 'el numero debe ser mayor de 599'
 
     const getUsers = () => {
-        
+
         axios
             .get('http://localhost:8000/api/crypto/device/read')
             .then((res) => {
@@ -54,7 +48,7 @@ export const ConverterBtc = () => {
     console.log(productivity);
     let primero = true
     return (
-        
+
         <div className="">
             <form className="input-style">
 
@@ -83,18 +77,20 @@ export const ConverterBtc = () => {
             </form>
 
             <div className='productivity'>{productivity.map((element) => {
-                const number = window.document.getElementById('number').value 
-                const filtro = window.document.getElementById('filtro').value 
-                console.log(filtro, element.crypto.name);
+                const number = window.document.getElementById('number').value
+                const filtro = window.document.getElementById('filtro').value
                 if (number >= element.device.price && filtro == element.crypto.name) {
-                    return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>    
-                } else if(number < 600 && primero){
+                    return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>
+                } else if (number < 600 && primero) {
                     primero = false
-                    return <div className='error-message2'>{error}</div>
-                } else if(filtro == '-1'){
-                    return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>    
+                    return <div className='error-message2'>el numero debe ser mayor de 599</div>
+                } else if (number < 3000 && filtro == 'Bitcoin' && primero) {
+                    primero = false
+                    return <div className='error-message2'>el numero debe ser mayor de 2999</div>
+                } else if (number >= element.device.price && filtro == '-1') {
+                    return <div className='productivity-1'>{element.device.name} | produce: {element.benefits} {element.crypto.name} | PRECIO:{element.device.price}</div>
                 }
-                
+
             })}</div>
 
         </div>
