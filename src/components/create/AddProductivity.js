@@ -81,7 +81,7 @@ export const AddProductivity = () => {
         return (<div>
             <Navbar3></Navbar3>
             <Navbar6></Navbar6>
-            <h1 className='crear-titulo'>Anadir Productividad</h1>
+            <h1 className='crear-titulo'>Añadir Productividad</h1>
             <div className="log-field">Tienes que Iniciar sesion para ver este campo</div>
         </div>)
 

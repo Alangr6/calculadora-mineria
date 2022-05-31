@@ -29,7 +29,7 @@ export const AddDevice = () => {
         <div>
             <Navbar3></Navbar3>
             <Navbar5></Navbar5>
-            <h1 className='crear-titulo'>Add Minero</h1>
+            <h1 className='crear-titulo'>Añadir Minero</h1>
             <form action={API_URL} className="crear-formulario">
                
                 <label className='crear-label'>Nombre

@@ -57,7 +57,7 @@ export const ConverterBtc = () => {
                         <label className='label-1'>Dinero que quieres invertir
                             <input type="number" id='number' className='rellenar-number' placeholder='0' />$
                         </label>
-                        <button type='button' className='boton-calculadora' onClick={getUsers}>
+                        <button type='button' className='boton-calculadora' readOnly onClick={getUsers}>
                             Calcular
                         </button>
 

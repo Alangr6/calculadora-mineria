@@ -47,7 +47,7 @@ export const DeleteProductivityConstructor = () => {
                 </thead>
             </table>
             {data.map((cryptoDevice) => (
-                <DeleteProductivityBody cryptoDevice={cryptoDevice}></DeleteProductivityBody>
+                <DeleteProductivityBody key={cryptoDevice.id} cryptoDevice={cryptoDevice}></DeleteProductivityBody>
             ))}
         </div>
 

@@ -32,7 +32,7 @@ export const AddCoin = () => {
         <div>
                <Navbar3></Navbar3>
                <Navbar4></Navbar4>
-               <h1 className='crear-titulo'>Add Moneda</h1>
+               <h1 className='crear-titulo'>Añadir Moneda</h1>
                 <form action={API_URL} method="POST" className="crear-formulario" >
                     <label className='crear-label'>Nombre
                         <input name='name' type="text" className='crear-input' id="name" />
