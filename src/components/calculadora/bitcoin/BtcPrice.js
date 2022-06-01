@@ -21,7 +21,7 @@ const BtcPrice = () => {
   return (
 
 
-    <div className=''>
+    <div className='calculator-bottom'>
 
       <div className="converter">
         <div className="input-style2">
@@ -48,7 +48,7 @@ const BtcPrice = () => {
 
       </div >
 
-      <div className='klk'>
+      <div className='prices'>
         {coins.map(coin => (
           <div className="price" key={coin.id}>
 

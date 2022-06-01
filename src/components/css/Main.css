@@ -416,7 +416,7 @@ body{
     padding-right: 2rem;
     padding-left: 2rem;
 }
-.klk{
+.prices{
     display: flex;
     background-color: whitesmoke;
     justify-content: center;
@@ -462,6 +462,11 @@ body{
     background-color: whitesmoke;
     font-size: 22px;
 
+}
+
+.calculator-bottom{
+    height: 30rem;
+    background-color: whitesmoke;
 }
 
 @media only screen and (max-width: 768px) {
