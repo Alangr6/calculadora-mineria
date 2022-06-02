@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar4 } from '../router/Navbar4'
 import { DeleteCoinConstructor } from './constructor/DeleteCoinConstructor'

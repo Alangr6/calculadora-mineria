@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Navbar3 } from '../router/Navbar3'
 import { Navbar6 } from '../router/Navbar6'
-import { DeleteCoinConstructor } from './constructor/DeleteCoinConstructor'
+
 import { DeleteProductivityConstructor } from './constructor/DeleteProductivityConstructor'
 
 

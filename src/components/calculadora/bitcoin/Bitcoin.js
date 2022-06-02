@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
 import { ConverterBtc } from './ConverterBtc'
-
-import { Navbar2 } from '../../router/Navbar2'
 import BtcPrice from './BtcPrice'
 
 

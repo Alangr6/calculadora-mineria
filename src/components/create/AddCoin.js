@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar3 } from "../router/Navbar3";
 import { Navbar4 } from "../router/Navbar4";
-import axios from 'axios';
 
 
 export const AddCoin = () => {

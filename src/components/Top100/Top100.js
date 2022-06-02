@@ -14,8 +14,7 @@ export const Top100 = () => {
             .then(data => setCoins(data))
     }, [])
    
-   /*  if(coins.current_price_change_percentage_24h > 0){
-         style="color:#008000"
+   /*  
     } */
     return (
         <table className='table'>
@@ -32,6 +31,7 @@ export const Top100 = () => {
                 </tr>
             </thead>
             <tbody className='table-body' >
+            
                 {coins.map(coin => (
                     <tr key={coin.name}>
                         <td className='index'>{coin.market_cap_rank}</td>

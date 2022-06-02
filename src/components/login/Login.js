@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import loginService from './LoginFunction';
 
 
 export const Login = () => {
-    const API_URL = "http://localhost:8000/api/login_check";
 
     const [data, setData] = useState([]);
     const [username, setUsername] = useState('');
@@ -17,7 +15,7 @@ export const Login = () => {
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
         if (loggedUserJSON) {
-            /* const user = JSON(loggedUserJSON) */
+           
             setUser(user)
         }
     }, [])
@@ -32,7 +30,7 @@ export const Login = () => {
             headers: {
                 Accept: 'application/json',
             }
-        })/* .then(res => console.log(res)).catch(err => console.log(err)) */
+        })
         console.log(data.token);
         return data
     }

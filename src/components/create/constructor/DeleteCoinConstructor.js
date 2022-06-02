@@ -1,7 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
-import { Navbar3 } from "../../router/Navbar3";
-import { Navbar4 } from "../../router/Navbar4";
-import { UpdateCoinButton } from "../UpdateCoinButton";
+import React, {  useEffect, useState } from "react";
 import { DeleteCoinBody } from "./DeleteCoinBody";
 
 
